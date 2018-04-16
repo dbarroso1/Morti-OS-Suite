@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> {% load static %}
 <html lang="en">
 
 <head>
@@ -6,44 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Morti-OS: Home</title>
-    <link rel="stylesheet" type="text/css" href="../static/styles/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
     <div class="nav_sidebar">
         <div class="wrapper">
-            <div style=" color: white; text-align: center;">
-                <h2 style="font-weight: 200;">Toolbox</h2>
+            <div class="header">
+                <h2>{{title}}
+                    <a href="/">
+                        <i class="material-icons">home</i>
+                    </a>
+                </h2>
             </div>
             <div class="sub_section">
-                <a href="#">
-                    <h3>LSI Module
-                        <i class="material-icons">keyboard_arrow_down</i>
+                <a href="lsi">
+                    <h3> LSI Module
+                        <i class="material-icons drop_icon">keyboard_arrow_down</i>
+                        {% if isActive.lsi %}
+                        <i class="material-icons actv_icon green">power</i>
+                        {% else %}
+                        <i class="material-icons actv_icon red">power</i>
+                        {% endif %}
                     </h3>
                 </a>
-                <div>
-                    <div id="chart_div"></div>
-
-                </div>
             </div>
             <div class="sub_section">
-                <a href="#">
+                <a href="eqe">
                     <h3>EQE Module
-                        <i class="material-icons">keyboard_arrow_down</i>
+                        <i class="material-icons drop_icon">keyboard_arrow_down</i>
+                        {% if isActive.eqe %}
+                        <i class="material-icons actv_icon green">power</i>
+                        {% else %}
+                        <i class="material-icons actv_icon red">power</i>
+                        {% endif %}
                     </h3>
                 </a>
-
             </div>
             <div class="sub_section">
-                <a href="#">
-                    <h3>RTC Module
-                        <i class="material-icons">keyboard_arrow_down</i>
+                <a href="rtc">
+                    <h3> RTC Module
+                        <i class="material-icons drop_icon">keyboard_arrow_down</i>
+                        {% if isActive.rtc %}
+                        <i class="material-icons actv_icon green">power</i>
+                        {% else %}
+                        <i class="material-icons actv_icon red">power</i>
+                        {% endif %}
                     </h3>
                 </a>
             </div>
             <div class="sidebar_footer">
-                <i style="color:white; text-align:center">Zinc Media, Corp | Copyright 2018</i>
+                <i>
+                    Morti-OS Suite {{version}} |
+                    <a href="http://www.zn30.us" target="_blank">Zinc Media, Corp</a>
+                    | Copyright 2018
+                </i>
             </div>
         </div>
     </div>
@@ -77,7 +95,6 @@
                     </p>
                     <a href="https://github.com/dbarroso1/Morti-OS-RTC">Learn More</a>
                 </td>
-
                 <td>
                     <h3>LSI</h3>
                     <i>(Live Simulation Interface)</i>
@@ -93,7 +110,11 @@
         </table>
         <div>
             <h1>News and Events</h1>
+            {% if news %}
+            <p>{{news_body}}</p>
+            {% else %}
             <i>- No News or Events - </i>
+            {% endif %}
         </div>
     </div>
 </body>

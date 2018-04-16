@@ -1,13 +1,9 @@
-@font-face {
-    font-family: Raleway;
-    src: url('../Static/font/Raleway/Raleway-Black.tff');
-}
-
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 body {
-    background: url("../images/bg.png");
-    font-family: 'raleway', Fallback, sans-serif;
-    background-size: 6px;
+    background:url("../images/bg.png") repeat fixed;
+    background-size: 8px;
+    font-family: 'Raleway', sans-serif;
     color: #2e2e2e;
 }
 
@@ -35,8 +31,10 @@ body {
 }
 
 .main {
+    transition: 500ms;
     padding-left: 350px;
 }
+
 .rtc_main {
     text-align: center;
 }
@@ -47,6 +45,7 @@ body {
     text-align: center;
     max-width: 800px;
 }
+
 .welcome_info h1 {
     font-weight: 300;
 }
@@ -54,6 +53,7 @@ body {
 /*Side bar Navigation*/
 
 .nav_sidebar {
+    transition: 500ms;
     height: 100%;
     width: 350px;
     position: fixed;
@@ -66,54 +66,123 @@ body {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+.nav_sidebar .header {
+    color: white;
+}
+
+.nav_sidebar .header a {
+    float: right;
+    text-decoration: none;
+    padding-right: 12px;
+    color: #fff;
+}
+
+.nav_sidebar h2 {
+    padding-left: 12px;
+    font-size: 26px;
+    font-weight: 100;
+}
+
 .nav_sidebar .wrapper {
     padding: 6px;
     color: #FFF;
 }
-
+.nav_sidebar .red{
+    color: rgb(151, 36, 36)
+}
+.nav_sidebar .green{
+    color: rgb(0, 255, 128);
+}
 .nav_sidebar .wrapper .sub_section {
     background: rgb(102, 91, 126);
-    border-radius: 10px;
-    padding: 2px;
+    border-radius: 4px;
+    height: 48px;
+    padding: 2px 0px;
     margin: 4px;
+    transition: 200ms;
 }
 
+.nav_sidebar .sub_section .actv_icon{
+    vertical-align: top;
+    float: left;
+}
+.nav_sidebar .sub_section .drop_icon{
+    padding-right: 12px;
+    float: right;
+}
 .nav_sidebar .wrapper .sub_section img {
     border-radius: 4px;
     border: 1px solid #000;
 }
 
 .nav_sidebar .wrapper .sub_section a {
-    text-align: right;
+    text-align: left;
     text-decoration: none;
     color: white;
-    transition: 200ms;
 }
 
 .nav_sidebar .wrapper .sub_section a:hover {
-    text-align: right;
     text-decoration: none;
-    color: rgb(218, 137, 255);
+    color: rgb(79, 219, 215);
 }
 
 .nav_sidebar .wrapper .sub_section h3 {
+    transition: 100ms;
     padding-left: 12px;
-    font-weight: 300;
+    font-weight: 200;
 }
 
 .nav_sidebar .wrapper .sub_section i {
     vertical-align: middle;
 }
-.sidebar_footer{
+
+.sidebar_footer {
     width: 325px;
+    min-width: 200px;
     padding: 4px;
     bottom: 0;
-    position:fixed;
-    text-align:center;
+    position: fixed;
+    text-align: center;
 }
-@media screen and (max-height: 600px) {
-    .sidenav {
-        width: 160px;
+
+.sidebar_footer i {
+    color: white;
+    text-align: center;
+    font-size: 10px;
+}
+
+.sidebar_footer a {
+    text-decoration: none;
+    color: white;
+    transition: 150ms;
+}
+
+.sidebar_footer a:hover {
+    color: rgb(1, 196, 255);
+}
+
+@media screen and (max-width: 1080px) {
+    .nav_sidebar {
+        width: 200px;
+        text-align: center;
         padding-top: 15px;
+    }
+    .nav_sidebar .header a {
+        float: none;
+    }
+    .nav_sidebar .wrapper .sub_section h3 {
+        text-align: center;
+        padding-left: 6px;
+        font-weight: 300;
+        font-size: 16px
+    }
+    .main {
+        padding-left: 200px;
+    }
+    .welcome_info td {
+        display: block;
+    }
+    .sidebar_footer {
+        width: 200px;
     }
 }

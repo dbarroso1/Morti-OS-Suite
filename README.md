@@ -13,15 +13,26 @@ To begin create a folder in your desktop or anywhere on your PC that will act as
 ```Python
 # Vanilla Instalation Root Folder
 /Morti-OS Suite      # ROOT
-    /bin             # Config Data
     /Modules         # Module Root
         /RTC-Module  # Deep Learning Chatbot
         /EQE-Module  # Emotional Quantification Engine
         /LSI-Module  # Live Simulation Interface
-    /Website
-        /templates
-        /static
-    /manage.py
+    /morti_os_suite  # Django Project Folder
+    /morti_os_front  # Django Application for Front end/ Angular
+    /templates
+        /dist        # Angular Front-End
+    /static
+    manage.py
+```
+
+Packages Required
+
+```text
+- Django
+- Anaconda
+    - Python 3.5+
+    - Tensorflow
+- Angular 4
 ```
 
 ### Anaconda Environment Setup

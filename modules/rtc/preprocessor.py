@@ -280,10 +280,10 @@ def seq2seq_model(inputs, targets, keep_prob, batch_size, sequence_length, answe
 print("Setting the Hyperparameters")
 epochs = 100
 batch_size = 32
-rnn_size = 512
+rnn_size = 1024 # Hyper Params must match Previously trained Weights
 num_layers = 3
-encoding_embedding_size = 512
-decoding_embedding_size = 521
+encoding_embedding_size = 1024
+decoding_embedding_size = 1024
 learning_rate = 0.001
 learning_rate_decay = 0.9
 min_learning_rate = 0.0001

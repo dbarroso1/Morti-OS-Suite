@@ -1,9 +1,11 @@
-import numpy as np
-import tensorflow as tf
 import re
 import time
 
+import numpy as np
+import tensorflow as tf
 import preprocessor as prep
+
+from termcolor import colored, cprint
 
 print("Loading the weights and Running the session")
 checkpoint = "./weights/chatbot_weights.ckpt"
@@ -20,14 +22,18 @@ def convert_string2int(question, word2int):
 print("Setting up the chat")
 while(True):
     question = input("You: ")
+    
     if question == 'Goodbye':
         break
+
     question = convert_string2int(question, prep.questionswords2int)
     question = question + [prep.questionswords2int['<PAD>']] * (25 - len(question))
     fake_batch = np.zeros((prep.batch_size, 25))
     fake_batch[0] = question
     predicted_answer = session.run(prep.test_predictions, {prep.inputs: fake_batch, prep.keep_prob: 0.5})[0]
+    
     answer = ''
+
     for i in np.argmax(predicted_answer, 1):
         if prep.answersints2word[i] == 'i':
             token = ' I'

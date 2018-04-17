@@ -10,21 +10,6 @@
 
 To begin create a folder in your desktop or anywhere on your PC that will act as the Suites root. Once Setup has been complete, these folders will get automatically populated.
 
-```Python
-# Vanilla Instalation Root Folder
-/Morti-OS Suite      # ROOT
-    /Modules         # Module Root
-        /RTC-Module  # Deep Learning Chatbot
-        /EQE-Module  # Emotional Quantification Engine
-        /LSI-Module  # Live Simulation Interface
-    /morti_os_suite  # Django Project Folder
-    /morti_os_front  # Django Application for Front end/ Angular
-    /templates
-        /dist        # Angular Front-End
-    /static
-    manage.py
-```
-
 Packages Required
 
 ```text
@@ -33,6 +18,23 @@ Packages Required
     - Python 3.5+
     - Tensorflow
 - Angular 4
+```
+
+```Python
+# Vanilla Instalation Root Folder
+/Morti-OS Suite      # ROOT
+    /Client
+        /src
+        /dist
+    /Server
+        /Modules     # Module Root
+            /RTC-Module  # Deep Learning Chatbot
+            /EQE-Module  # Emotional Quantification Engine
+            /LSI-Module  # Live Simulation Interface
+        /morti_os_suite  # Django Project Folder
+        /templates
+        /static
+    manage.py
 ```
 
 ### Anaconda Environment Setup

@@ -1,43 +1,57 @@
 # Morti-OS Suite
 
-### What is Morti-OS
+<center>
+    <h2>What is Morti-OS</h2>
+</center>
 
-&nbsp;&nbsp;&nbsp; Morti stands for Machine Operated Relationship Trained Input-Output System. Morti-OS is an Artificially Intelligent Companion, he was built for the purpose of exploring and researching the evolution of information and how its processed, in order to get a better understanding of how the human brain has evolved. 
+<table>
+    <tbody>
+        <tr>
+            <td>
+    &nbsp;&nbsp;&nbsp;&nbsp;Morti stands for Machine Operated Relationship Trained Input-Output System. Morti-OS is an Artificially Intelligent Companion, he was built for the purpose of exploring and researching the evolution of information and how its processed, in order to get a better understanding of how the human brain has evolved.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Morti is planned to be made up from multiple components. These components act like Lobes and are modeled after the human brain and is split up into Four Parts: Frontal Lobe, Parietal Lobe, Temporal Lobe and Occipital Lobe. Each Lobe has multiple modules contained inside it. Modules act as different sections to Mortis Brain, one such module is the ETC (Emotionally Trained Communication) Module. this module is made up of other smaller components, that allow Morti to efectivly communicate though Web or Applicaiton Interface.
+            </td>
+            <td>
+            <img alt="Morti-Logo" src="http://zn30.us/wp-content/uploads/2018/04/morti_logo_title_w.png">
+            </td>
+        </tr>
+    </tbody>
+</table>
 
-&nbsp;&nbsp;&nbsp; Morti is planned to be made up from multiple components. These components act like Lobes and are modeled after the human brain and is split up into Four Parts: Frontal Lobe, Parietal Lobe, Temporal Lobe and Occipital Lobe. Each Lobe has multiple modules contained inside it. Modules act as different sections to Mortis Brain, one such module is the ETC (Emotionally Trained Communication) Module. this module is made up of other smaller components, that allow Morti to efectivly communicate though Web or Applicaiton Interface.
 
 # Instalation/Requirments
 
 To begin create a folder in your desktop or anywhere on your PC that will act as the Suites root. Once Setup has been complete, these folders will get automatically populated.
 
-Packages Required
+### Packages Required
 
 ```text
-- Django
 - Anaconda
     - Python 3.5+
-    - Tensorflow
-- Angular 4
+    - Tensorflow 1.4+
+- Django 1.0+
+- Angular 2+
 ```
 
+### Project Directory
+
 ```Python
-# Vanilla Instalation Root Folder
-/Morti-OS Suite      # ROOT
+/Morti-OS Suite
     /Client
         /src
         /dist
     /Server
-        /Modules     # Module Root
-            /RTC-Module  # Deep Learning Chatbot
-            /EQE-Module  # Emotional Quantification Engine
-            /LSI-Module  # Live Simulation Interface
-        /morti_os_suite  # Django Project Folder
+        /Modules
+            /RTC-Module
+            /EQE-Module
+            /LSI-Module
+        /morti_os_suite
         /templates
         /static
     manage.py
 ```
 
-### Anaconda Environment Setup
+### Step 1 - Setup Anaconda Environment
 
 ```Python
  # Create Anaconda environment
@@ -50,7 +64,7 @@ source activate morti_os_suite
 pip install tensorflow==1.4.0 tqdm django
  ```
 
-### Create a Django Project
+### Step 2 - Create a Django Project
 
 ```Python
  # Create Django Project

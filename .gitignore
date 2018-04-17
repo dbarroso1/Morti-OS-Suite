@@ -7,3 +7,6 @@ modules/rtc/__pycache__/preprocessor.cpython-35.pyc
 modules/rtc/__pycache__/preprocessor.cpython-35.pyc
 Client/package-lock.json
 Client/package-lock.json
+Modules/rtc/.DS_Store
+Modules/rtc/__pycache__/morti.cpython-35.pyc
+Modules/rtc/__pycache__/seq2seq_trainer.cpython-35.pyc

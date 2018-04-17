@@ -3,25 +3,25 @@ import tensorflow as tf
 import re
 import time
 
-print("0.57% | Importing the dataset")
+print("#### Starting Pre Processor ####")
+print("Importing the dataset")
 lines = open('corpus/movie_lines.txt', encoding = 'utf-8', errors = 'ignore').read().split('\n')
 conversations = open('corpus/movie_conversations.txt', encoding = 'utf-8', errors = 'ignore').read().split('\n')
-print("1.14% | Data set has been Loaded")
 
-print("1.71% | Creating a dictionary that maps each line and its id")
+print("Creating a dictionary that maps each line and its id")
 id2line = {}
 for line in lines:
     _line = line.split(' +++$+++ ')
     if len(_line) == 5:
         id2line[_line[0]] = _line[4]
  
-print("2.28% | Creating a list of all of the conversations")
+print("Creating a list of all of the conversations")
 conversations_ids = []
 for conversation in conversations[:-1]:
     _conversation = conversation.split(' +++$+++ ')[-1][1:-1].replace("'", "").replace(" ", "")
     conversations_ids.append(_conversation.split(','))
  
-print("0.57% | Getting separately the questions and the answers")
+print("Getting separately the questions and the answers")
 questions = []
 answers = []
 for conversation in conversations_ids:
@@ -348,3 +348,5 @@ training_answers = sorted_clean_answers[training_validation_split:]
 validation_questions = sorted_clean_questions[:training_validation_split]
 validation_answers = sorted_clean_answers[:training_validation_split]
 print("Session has been created")
+
+print("#### Pre Processor Finished Processing ####")

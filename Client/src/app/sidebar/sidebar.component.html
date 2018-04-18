@@ -1,48 +1,31 @@
 <div class="nav_sidebar">
     <div class="wrapper">
-        <div class="header">
-            <h2>{{title}}
-                <a href="/">
-                    <i class="material-icons">home</i>
+        <div class="sidebar_header">
+            <span class="title">{{title}}</span>
+            <i class="material-icons md-24 title_btn">
+                <a class="" href="/">home</a>
+            </i>
+        </div>
+        <ul>
+            <li class="sub_section">
+                <a href="rtc">RTC Module
+                    <i class="material-icons md-light">keyboard_arrow_down</i>
                 </a>
-            </h2>
-        </div>
-        <div class="sub_section">
-            <a href="lsi">
-                <h3> LSI Module
-                    <i class="material-icons drop_icon">keyboard_arrow_down</i>
-                <!--{% if isActive.lsi %}
-                    <i class="material-icons actv_icon green">power</i>
-                    {% else %}
-                    <i class="material-icons actv_icon red">power</i>
-                    {% endif %}-->
-                </h3>
-            </a>
-        </div>
-        <div class="sub_section">
-            <a href="eqe">
-                <h3>EQE Module
-                    <i class="material-icons drop_icon">keyboard_arrow_down</i>
-                <!-- {% if isActive.eqe %}
-                    <i class="material-icons actv_icon green">power</i>
-                    {% else %}
-                    <i class="material-icons actv_icon red">power</i>
-                    {% endif %} -->
-                </h3>
-            </a>
-        </div>
-        <div class="sub_section">
-            <a href="rtc">
-                <h3> RTC Module
-                    <i class="material-icons drop_icon">keyboard_arrow_down</i>
-                    <!--{% if isActive.rtc %}
-                    <i class="material-icons actv_icon green">power</i>
-                    {% else %}
-                    <i class="material-icons actv_icon red">power</i>
-                    {% endif %}-->
-                </h3>
-            </a>
-        </div>
+            </li>
+            <li class="sub_section">
+                <a href="eqe">EQE Module
+                    <i class="material-icons md-light">keyboard_arrow_down</i>
+                </a>
+            </li>
+            <li class="sub_section">
+                <a href="lsi">LSI Module
+                    <i class="material-icons md-light">keyboard_arrow_down</i>
+                </a>
+            </li>
+
+        </ul>
+
+
         <div class="sidebar_footer">
             <i>
                 Morti-OS Suite {{version}} |

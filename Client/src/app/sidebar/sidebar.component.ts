@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class SidebarComponent implements OnInit {
 
   title = 'Morti-OS: Toolbox'
+  rtcIsActive = true
+  eqeIsActive = false
+  lsiIsActive = false
   
   constructor() { }
 

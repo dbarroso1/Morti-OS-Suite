@@ -1,7 +1,7 @@
 /*Side bar Navigation*/
 
 .nav_sidebar {
-    border-top: solid 6px rgb(0, 225, 255);
+    animation: color_change 5s infinite alternate;
     height: 100%;
     width: 300px;
     position: fixed;
@@ -12,6 +12,11 @@
     overflow-x: hidden;
     padding-top: 10px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+#sub_header {
+    padding-left: 6px;
+    padding-top: 3px;
+    float: left;
 }
 
 .nav_sidebar .wrapper {
@@ -70,12 +75,21 @@
 
 .nav_sidebar .sub_section {
     background: rgb(102, 91, 126);
+    transition: 100ms;
     border-radius: 4px;
+}
+.nav_sidebar .sub_section:hover {
+    border-right: solid 8px rgb(111, 137, 148);
 }
 
 .nav_sidebar .sub_section a {
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     text-decoration: none;
     color: #FFFFFF;
+}
+
+.nav_sidebar .sub_section a:hover {
+    color: aqua;
 }
 
 /* FOOTER AREA SIDEBAR */

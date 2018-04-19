@@ -1,30 +1,33 @@
-<div class="main rtc_main">
+<div class="rtc_main">
     <div>
         <div class="menu">
-            <div class="name">Morti-OS RTC Trainer</div>
-            <div class="members">
-                <b>You</b> &amp; Morti</div>
+            <div class="name">{{module_title}}</div>
+            <div class="members">{{module_desc}}</div>
+            <div class="settings">
+                <a href="/settings">
+                    <i class="material-icons md-light">settings</i>
+                </a>
+            </div>
         </div>
-
         <ol class="chat">
-            <div class="day">-Today-</div>
+            <div class="day">{{today| date:'shortDate'}}</div>
+            <div class="notification">Wake Morti up by saying "Hello"</div>
+            <!--Chat Starts Here-->
             <li class="other">
                 <div class="msg">
-                    <div class="user">Morti</div>
-                    <p>Dude, Want to go dinner? </p>
-                    <time>20:17</time>
+                    <div class="user">{{morti.name}}</div>
+                    <p>{{morti.message}} </p>
+                    <time>{{today | date:'shortTime' }}</time>
                 </div>
             </li>
             <li class="self">
                 <div class="msg">
-                    <div class="user">You</div>
-                    <p>I'm still doing the Góngora comment...
-                        <br> Better other day</p>
-                    <time>20:18</time>
+                    <div class="user">{{user.name}}</div>
+                    <p>{{user.message}}</p>
+                    <time>{{today | date:'shortTime' }}</time>
                 </div>
             </li>
         </ol>
-
         <div class="typezone">
             <form>
                 <textarea type="text" placeholder="Say something"></textarea>

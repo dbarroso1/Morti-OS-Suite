@@ -1,0 +1,14 @@
+.eqe_main {
+    margin: 0 auto;
+    padding-top: 50px;
+    width: 50%;
+}
+
+.eqe_trainer {
+    padding: 4px;
+    background: rgba(0, 0, 0, 0.100);
+}
+
+.eqe_trainer input {
+    margin: 2px;
+}

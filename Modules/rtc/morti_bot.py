@@ -3,7 +3,8 @@ import time
 
 import numpy as np
 import tensorflow as tf
-from Modules.rtc import preprocessor as prep
+
+import preprocessor as prep
 
 print("Loading the weights and Running the session")
 checkpoint = "./weights/chatbot_weights.ckpt"

@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'app';
+  title = 'app'
   version = '1.0.1'
+  module_title = 'Home'
+  module_desc = ''
 }

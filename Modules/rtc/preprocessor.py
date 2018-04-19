@@ -1,12 +1,15 @@
+import os
 import numpy as np
 import tensorflow as tf
 import re
 import time
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 print("#### Starting Pre Processor ####")
 print("Importing the dataset")
-lines = open('corpus/movie_lines.txt', encoding = 'utf-8', errors = 'ignore').read().split('\n')
-conversations = open('corpus/movie_conversations.txt', encoding = 'utf-8', errors = 'ignore').read().split('\n')
+lines = open(os.path.join(BASE_DIR,"rtc/corpus/movie_lines.txt"), encoding = 'utf-8', errors = 'ignore').read().split('\n')
+conversations = open(os.path.join(BASE_DIR,"rtc/corpus/movie_lines.txt"), encoding = 'utf-8', errors = 'ignore').read().split('\n')
 
 print("Creating a dictionary that maps each line and its id")
 id2line = {}

@@ -3,9 +3,7 @@ import time
 
 import numpy as np
 import tensorflow as tf
-import preprocessor as prep
-
-from termcolor import colored, cprint
+from Modules.rtc import preprocessor as prep
 
 print("Loading the weights and Running the session")
 checkpoint = "./weights/chatbot_weights.ckpt"
@@ -46,4 +44,4 @@ while(True):
         answer += token
         if token == '.':
             break
-    print('ChatBot: ' + answer)
+    print('Morti: ' + answer)

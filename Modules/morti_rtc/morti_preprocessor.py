@@ -34,6 +34,5 @@ def initDictProcessing(questions,answers, conversations_ids, id2line, conversati
             questions.append(id2line[conversation[i]])
             answers.append(id2line[conversation[i+1]])
     return questions,answers, conversations_ids, id2line, conversation
-    
 initDictProcessing(questions,answers, conversations_ids, id2line, conversation)
 print(id2line)

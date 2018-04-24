@@ -4,3 +4,5 @@
 >$: source activate morti_os_suite
 >$(morti_os_suite): pip install tensorflow  #Current version 1.7.0
 ```
+
+Make everyhting global, figure out how to make sjango pick it up too dummy

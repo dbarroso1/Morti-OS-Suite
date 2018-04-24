@@ -1,6 +1,6 @@
-#bin/python
-from Server import manage
-from Modules.rtc import morti_bot
-
-print(manage)
-print(morti_bot)
+#!/usr/bin/env python3
+"""
+Morti-OS: Suite
+=============================
+This file is used to import all the Modules including the Client and Server.
+"""

@@ -28,7 +28,7 @@ To begin create a folder in your desktop or anywhere on your PC that will act as
 ```text
 - Anaconda
     - Python 3.5+
-    - Tensorflow 1.4+
+    - Tensorflow 1.7+
 - Django 1.0+
 - Angular 2+
 ```

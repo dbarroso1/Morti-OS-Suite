@@ -1,1 +1,0 @@
-print("== Seq2Seq Trainer has started ==")

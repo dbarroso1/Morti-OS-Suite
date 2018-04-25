@@ -1,25 +1,39 @@
 import numpy as np
 import tensorflow as tf
-import re
-import time
+import re, time
 
 id2line = {}    # Creating a Dictionary that maps each line and its ID
 word2count = {} # Creating word mapped with ID's
 qw2int = {}     # Creating Questions Mapped with ID's
-aw2int = {}     # Creating Answers mapped with ID's
+aw2int = {}     # Creating Answers mapped with ID's # Creating and Inverse dictionery
 convo_ids = []  # Creating a list of IDs
 questions = []  # Creating a Dictionary of Questions
 answers = []    # Creating a Dictionary of Answers
 clean_q = []    # Creating Clean Questions
 clean_a = []    # Creating Clean Answers
-tokens = ['<PAD>','<EOS>','<OUT>','<SOS>',]
+# aInts2w = {}
+sorted_clean_q = []
+sorted_clean_a = []
 
 def cleanDictionaries():
     """
-    Clean Dictionaries Function Creates, Processes and Cleans the words used by morits Seq2Seq Trainer
+    Clean Dictionaries:
+    This Function Creates, Processes and Cleans the words used 
+    by Morti's Seq2Seq Trainer and Tensorflow.
+    Dictionaries Create
+        id2line = {}        
+        word2count = {}     
+        qw2int = {}        
+        aw2int = {}         
+        convo_ids = []      
+        questions = []      
+        answers = []        
+        clean_q = []        
+        clean_a = []       
+        sorted_clean_q = [] 
+        sorted_clean_a = [] 
     """
-    print("=====================================================")
-    print("=> Pre Processing has Started. Creating Dictionaries.")
+    print("=>: Pre Processing has Started. Creating Dictionaries.")
     lines = open('training_data/movie_lines.txt',
                  encoding='utf-8',
                  errors='ignore').read().split('\n')
@@ -121,7 +135,7 @@ def cleanDictionaries():
                 word2count[word] = 1
             else:
                 word2count[word] += 1
-    
+    # Hyper Parameters for PreProcessor Word2Count Dictionary
     threshold = 24
     word_num = 0
     for word, count in word2count.items():
@@ -131,11 +145,40 @@ def cleanDictionaries():
     for word, count in word2count.items():
         if count >= threshold:
             aw2int[word] = word_num
-            word_num += 1
+            word_num += 1  
+    tokens = ['<PAD>','<EOS>','<OUT>','<SOS>',]
     for token in tokens:
         qw2int[token] = len(qw2int) + 1
     for token in tokens:
         aw2int[token] = len(aw2int) + 1
-    return print("=> Pre-Processing has finished. Dictionaries Created.") 
+
+    # This section Feels Useless
+    # aInts2w = {w_i: w for w, w_i in aw2int.items()}
+    for i in range(len(clean_a)):
+        clean_a[i] += '<EOS>'
+    q2int = []
+    for question in clean_q:
+        ints = []
+        for word in question.split():
+            if word not in qw2int:
+                ints.append(qw2int['<OUT>'])
+            else:
+                ints.append(qw2int[word])
+        q2int.append(ints)
+    a2int = []
+    for answer in clean_a:
+        ints = []
+        for word in answer.split():
+            if word not in aw2int:
+                ints.append(aw2int['<OUT>'])
+            else:
+                ints.append(aw2int[word])
+        a2int.append(ints)
+    for length in range(1,25 + 1):
+        for i in enumerate(q2int):
+            if len(i[1]) == length:
+                sorted_clean_q.append(q2int[i[0]])
+                sorted_clean_a.append(a2int[i[0]])
+    return print("=>: Pre-Processing has finished. Dictionaries Created.")
 # Below can be deleted for Production
-cleanDictionaries()
+# cleanDictionaries()

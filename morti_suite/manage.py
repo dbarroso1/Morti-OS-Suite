@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 import os
 import sys
-#from module_rtc import morti 
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "morti_site.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "morti_suite.settings")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

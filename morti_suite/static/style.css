@@ -1,0 +1,53 @@
+body{
+    overflow: hidden;
+}
+header{
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    background: #232323;
+    height: 64px;
+    color: #FFF;
+    padding: 6px;
+}
+header h1{
+    padding-left: 30px;
+}
+header a{
+    color: #FFF;
+    padding-top: 24px;
+    padding-right: 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.login-wrapper{
+    width: 250px;
+    border-radius: 4px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 128px;
+    left: 0;
+    right: 0;    
+    text-align: center;
+    padding: 12px;
+    background: rgb(54, 54, 54);
+    color: #FFF;
+}
+.login-wrapper input{
+    margin-bottom: 12px;
+    margin-left: 6px;
+}
+.login-wrapper label{
+}
+.login-wrapper button{
+    width: 64px;
+    padding: 4px;
+    margin: 6px;
+}
+.login-wrapper i{
+    font-size: 12px;
+}

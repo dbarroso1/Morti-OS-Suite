@@ -1,4 +1,4 @@
-"""morti_site URL Configuration
+"""morti_suite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -14,9 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from django.contrib.auth.views import login, logout
+from morti_interface import views
 
 urlpatterns = [
+    path('', views.index, name='homepage'),
+    path('accounts/login/', login, name='login'),
+    path('accounts/logout/', logout, name='logout'),
     path('admin/', admin.site.urls),
-    path('', include('morti_interface.urls'))
 ]

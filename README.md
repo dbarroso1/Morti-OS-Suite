@@ -26,29 +26,10 @@ To begin create a folder in your desktop or anywhere on your PC that will act as
 ### Packages Required
 
 ```text
-- Anaconda
-    - Python 3.5+
-    - Tensorflow 1.7+
-- Django 1.0+
-- Angular 2+
-```
-
-### Project Directory
-
-```Python
-/Morti-OS Suite
-    /Client
-        /src
-        /dist
-    /Server
-        /Modules
-            /RTC-Module
-            /EQE-Module
-            /LSI-Module
-        /morti_os_suite
-        /templates
-        /static
-    manage.py
+Anaconda
+Python 3.5+
+Tensorflow 1.7+
+Django 1.0+
 ```
 
 ### Step 1 - Setup Anaconda Environment
@@ -61,16 +42,17 @@ conda create -n morti_os_suite python=3.5 anaconda
 source activate morti_os_suite
 
  # Instal Important Packages
-pip install tensorflow==1.4.0 tqdm django
+pip install tensorflow==1.7 django
  ```
 
 ### Step 2 - Create a Django Project
 
 ```Python
  # Create Django Project
-django-admin startproject mortiSuite
+django-admin startproject morti_suite
 
  # Test Server
+python manage.py migrate
 python manage.py runserver
 ```
 

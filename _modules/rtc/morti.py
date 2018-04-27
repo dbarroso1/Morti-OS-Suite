@@ -2,8 +2,8 @@
 import numpy as np
 import tensorflow as tf
 import re, time
-from module_rtc import morti_preprocessor as mpp
-from module_rtc import morti_seq2seq as trainer
+import morti_preprocessor as mpp
+import morti_seq2seq as trainer
 
 current_time = time.asctime( time.localtime(time.time()) )
 
@@ -22,3 +22,5 @@ def beginPreprocessor():
 def beginSeq2SeqBuilder():
     trainer.buildSeq2seq()
     return
+
+startMorti()

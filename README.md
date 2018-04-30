@@ -77,9 +77,6 @@ Morti: well that sounds frustrating
 
 The Goal with EQE is to find a means of guiding Morti's interactions (Both Communicative and Physically) by Emotions.
 
-- NLTK Natural Language Toolkit - [Here](https://www.nltk.org/)
-    - Tokenizing and recognizing Nouns verbs and adjectives.
-
 ## Quantifying Emotions in Communication
 
 The EQE, when used in communications means that Morti will base his responses on the _tone_ and _context_ of a conversation. When Building the Seq2Seq Models I would include two Corpi, one of Identifyed Negative Conversations, and one with verifyed Positive Conversations.
@@ -92,6 +89,7 @@ Each word in the Input Phrase is seperated from the whole, given a corresponding
 
 ---
 Refrences:
+- [NLTK Natural Language Toolkit](https://www.nltk.org/)
 - [Chatbots with Seq2Seq](http://suriyadeepan.github.io/2016-06-28-easy-seq2seq/)
 - [Practical seq2seq](http://suriyadeepan.github.io/2016-12-31-practical-seq2seq/)
 - [Tensorflow Programmers Guide](https://www.tensorflow.org/programmers_guide/)

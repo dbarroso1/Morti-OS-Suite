@@ -58,49 +58,6 @@ python manage.py runserver
 
 ---
 
-# Morti-OS: Live Simulation (LS) Module
-
-## About Morti LS
-
- The LS Module is where Morti exsists as a simulated avatar in a virtual world. This Module is how the user will mainly interact with Morti via a GUI. All modules will combine here to give a full live experience. Using an XOR Artificial Neural Network and Unity, Morti will need to train and learn about his environment so that he can survive.
-
-He is planned to have multiple inputs, three of which are Spacial raycasts that act as eyes. With these Raycasts, he will hopefully be able to manuver himself around the environement and find objects that he can interact with. Other inputs include variables like Health, Hungery, thirst and Energy. Each Variable is affected by the other, and ultimatly affected by Mortis actions.
-
-<table align="center">
-<tbody>
-    <tr>
-        <td></td>
-        <th>Health</th>
-        <th>Energy</th>
-        <th>Thirst</th>
-        <th>Mood</th>
-    </tr>   
-     <tr>
-        <th>Value</th>
-        <td style="text-align: center;" colspan="3">1-100</td>
-        <td>RTC</td>
-    </tr>     
-    <tr>
-        <th>Rate*</th>
-        <td>-0.01/s</td>
-        <td>-0.1/s</td>
-        <td>-0.1/s</td>
-        <td>RTC</td>
-    </tr>
-    <tr>
-        <td colspan="6">*Rate is based on Morti State</td>
-    </tr>
-</tbody>
-</table>
-
-Commuication with the user is key, as it directly effect the RTC Module. For example, if Morti is left alone for a few days, his RTC module will identify this as him being neglected. Now if you where to speak with him, he will respond acordingly, most likely in a depressed or frustrated manner. Without frequent communication from the user, Morti can get depressed. Depression can lead Morti to slack off in his survival duties, and without help he will eventually die.
-
-## Morti's Habitat
-
-Using the Unity Engine, Morti will have an environment that he can roam around, and ultimatly try to survive in. Morti will acheive survival by collecting food, water, energy by sleeping and communication with a user. These survival Attributes, at birth will start at a value of 100, and every second, the Attribute is subtracted by 0.1. While this only gives Morti a static, means of processing health and other attributes, I do plan on formulating a percentage value to subtract instead, making the LS Module more dynamic.
-
----
-
 # Morti-OS: Relationship Trained Communication (RTC) Module
 
 The RTC Module is used by Morti as its main method of communication with the user. The goal of the RTC Module is to process user inputs, and define the context of said input, while calculating an emotional value (1-10) to the expression given.
@@ -116,8 +73,26 @@ Morti: well that sounds frustrating
 // Morti Understands that a personal Item was damaged
 ````
 
-## Emotional Quantification
+## EQE Emotional Quantification Enigne
 
-Morti is planned to have a vast array of emotional responses. Although the amount of emotional responses are limited to Six Primary Emotions, Morti can calculate multiple emotions to get acheive Secondary Emotional responses. (See Image Below)
+The Goal with EQE is to find a means of guiding Morti's interactions (Both Communicative and Physically) by Emotions.
+
+- NLTK Natural Language Toolkit - [Here](https://www.nltk.org/)
+    - Tokenizing and recognizing Nouns verbs and adjectives.
+
+## Quantifying Emotions in Communication
+
+The EQE, when used in communications means that Morti will base his responses on the _tone_ and _context_ of a conversation. When Building the Seq2Seq Models I would include two Corpi, one of Identifyed Negative Conversations, and one with verifyed Positive Conversations.
+
+Alternativley I can include a training function that allaws me to index conversations as Negative or positive while i converse with Morti. The goal is to have Multiple Dictionaries with phrases of varying emotional States that Morti can use to identify a conversation and react accordingly.
+
+Morti is planned to have a vast array of emotional responses. Although the amount of emotional responses are limited to Six Primary Emotions, Morti can calculate multiple emotions to get acheive Secondary Emotional responses.
+
 Each word in the Input Phrase is seperated from the whole, given a corresponding Emotional Weight, and is then its averaged out to find the phrases Emotional Score.
 
+---
+Refrences:
+- [Chatbots with Seq2Seq](http://suriyadeepan.github.io/2016-06-28-easy-seq2seq/)
+- [Practical seq2seq](http://suriyadeepan.github.io/2016-12-31-practical-seq2seq/)
+- [Tensorflow Programmers Guide](https://www.tensorflow.org/programmers_guide/)
+- [Emotion Detection and Recognition from Text Using Deep Learning](https://www.microsoft.com/developerblog/2015/11/29/emotion-detection-and-recognition-from-text-using-deep-learning/)

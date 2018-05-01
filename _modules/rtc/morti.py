@@ -1,26 +1,15 @@
-#!/usr/bin/env python
-import numpy as np
-import tensorflow as tf
-import re, time
-import morti_preprocessor as mpp
-import morti_seq2seq as trainer
+"""
+Morti-OS: Suite
 
-current_time = time.asctime( time.localtime(time.time()) )
+"""
+import nltk
 
-def startMorti():
-    print("==========[",current_time,"]==========")
-    beginPreprocessor()
-    print("==========[PreProcessor Done]=========")
-    beginSeq2SeqBuilder
-    print("==========[Seq2Seq Model Done]========")
-    return print("==========[",current_time,"]==========")
+class Morti(object):
+    def __init__(self):
+        self.name = "Morti"
+        self.questions = {}
+        self.answers = {}
 
-def beginPreprocessor():
-    mpp.cleanDictionaries()
-    return
-
-def beginSeq2SeqBuilder():
-    trainer.buildSeq2seq()
-    return
-
-startMorti()
+m = Morti()
+print(m.name)
+print(m.questions)

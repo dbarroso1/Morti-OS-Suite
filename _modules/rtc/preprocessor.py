@@ -1,26 +1,6 @@
 import os, re, time
 
-def buildDictionary(threshold,
-                    word_num,
-                    answers, 
-                    aw2int, 
-                    clean_a, 
-                    clean_q,
-                    convo_ids,
-                    id2line,
-                    questions,
-                    qw2int,
-                    sorted_clean_a,
-                    sorted_clean_q,
-                    word2count):
-    '''
-    Build Dictionary
-
-    Pre Processes the text data inside the Cornell Movie Corpus and splits 
-    the words into bitesize chunks the Seq2Seq Model can Train off of.
-    '''
-    print("=> Pre Processing: Building Dictionaries . . .")
-    def clean_text(text):
+def clean_text(text):
         text = text.lower()
         text = re.sub(r"aren't", "are not", text)
         text = re.sub(r"can't", "cannot", text)
@@ -81,8 +61,30 @@ def buildDictionary(threshold,
         text = re.sub(r"1490breckinridge", "1490 breckin ridge", text)
         text = re.sub(r"[-()\"#/*@$&%;:<>{}`'+=~|.!?,]", "", text)
         return text
-    
-    
+
+def buildDictionary(threshold,
+                    tokens,
+                    aInts2w,
+                    word_num,
+                    answers, 
+                    aw2int, 
+                    clean_a, 
+                    clean_q,
+                    convo_ids,
+                    id2line,
+                    questions,
+                    qw2int,
+                    sorted_clean_a,
+                    sorted_clean_q,
+                    word2count):
+    '''
+    Build Dictionary
+
+    Pre Processes the text data inside the Cornell Movie Corpus and splits 
+    the words into bitesize chunks the Seq2Seq Model can Train off of.
+    '''
+    print("=> Pre Processing: Building Dictionaries . . .")
+      
     lines = open(('training_data/movie_lines.txt'),
                     encoding='utf-8',
                     errors='ignore').read().split('\n')
@@ -132,14 +134,14 @@ def buildDictionary(threshold,
         if count >= threshold:
             aw2int[word] = word_num
             word_num += 1  
-    tokens = ['<PAD>','<EOS>','<OUT>','<SOS>',]
+    tokens = tokens
     for token in tokens:
         qw2int[token] = len(qw2int) + 1
     for token in tokens:
         aw2int[token] = len(aw2int) + 1
 
-    # This section Feels Useless
-    # aInts2w = {w_i: w for w, w_i in aw2int.items()}
+    # This section is used in the final Morti Chatbot! Important!!
+    aInts2w = {w_i: w for w, w_i in aw2int.items()}
     for i in range(len(clean_a)):
         clean_a[i] += '<EOS>'
     q2int = []
@@ -165,6 +167,6 @@ def buildDictionary(threshold,
             if len(i[1]) == length:
                 sorted_clean_q.append(q2int[i[0]])
                 sorted_clean_a.append(a2int[i[0]])
-    return
+    return aInts2w, threshold, word_num, answers, aw2int, clean_a, clean_q, convo_ids, id2line, questions, qw2int, sorted_clean_a, sorted_clean_q, word2count, tokens
 
 

@@ -1,6 +1,6 @@
-import os, re, time, string
-
-RTC_DIR = os.path.dirname(os.path.abspath(__file__))
+import tensorflow as tf
+import preprocessor as pp
+#import morti_seq2seq as trainer
 
 class MortiChatbot(object):
     def __init__ (self):
@@ -16,12 +16,15 @@ class MortiChatbot(object):
         self.clean_a = []    # Creating Clean Answers
         self.sorted_clean_q = []
         self.sorted_clean_a = []
+        self.aInts2w ={}
         self.threshold = 24
         self.word_num = 0
-        
-import preprocessor as pp
+        self.tokens = ['<PAD>','<EOS>','<OUT>','<SOS>',]
+
 m = MortiChatbot()
 pp.buildDictionary(m.threshold,
+                    m.tokens,
+                    m.aInts2w,
                     m.word_num,
                     m.answers, 
                     m.aw2int, 
@@ -34,6 +37,5 @@ pp.buildDictionary(m.threshold,
                     m.sorted_clean_a,
                     m.sorted_clean_q,
                     m.word2count)
-
 print("=> Sorted Clean Questions Created: {0}".format(len(m.sorted_clean_q)))
 print("=> Sorted Clean Answers Created: {0}".format(len(m.sorted_clean_a)))

@@ -1,0 +1,57 @@
+<div class="nav_sidebar">
+    <div class="wrapper">
+        <div class="sidebar_header">
+            <span class="title">{{title}}</span>
+            <i class="material-icons md-24 title_btn">
+                <a class="" href="/">home</a>
+            </i>
+        </div>
+        <ul>
+            <li class="sub_section">
+                <a href="rtc" *ngIf="rtcIsActive == true; else inactive1">
+                    <span id="sub_header">RTC Module</span>
+                    <i class="material-icons md-light" style="color: rgb(110, 196, 110)">power</i>
+                </a>
+                <ng-template #inactive1>
+                    <a href="rtc">
+                        <span id="sub_header">RTC Module</span>
+                        <i class="material-icons md-light">power</i>
+                    </a>
+                </ng-template>
+            </li>
+            <li class="sub_section">
+                <a href="eqe" *ngIf="eqeIsActive == true; else inactive2">
+                    <span id="sub_header">EQE Module</span>
+                    <i class="material-icons md-light" style="color: rgb(110, 196, 110)">power</i>
+                </a>
+                <ng-template #inactive2>
+                    <a href="eqe">
+                        <span id="sub_header">EQE Module</span>
+                        <i class="material-icons md-light">power</i>
+                    </a>
+                </ng-template>
+            </li>
+            <!--li class="sub_section">
+                <a href="lsi" *ngIf="lsiIsActive == true; else inactive3">
+                    <span id="sub_header">LSI Module</span>
+                    <i class="material-icons md-light" style="color: rgb(110, 196, 110)">power</i>
+                </a>
+                <ng-template #inactive3>
+                    <a href="lsi">
+                        <span id="sub_header">LSI Module</span>
+                        <i class="material-icons md-light">power</i>
+                    </a>
+                </ng-template>
+            </li-->
+        </ul>
+
+
+        <div class="sidebar_footer">
+            <i>
+                Morti-OS Suite {{version}} |
+                <a href="http://www.zn30.us" target="_blank">Zinc Media, Corp</a>
+                | Copyright 2018
+            </i>
+        </div>
+    </div>
+</div>

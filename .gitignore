@@ -8,3 +8,4 @@ Modules/rtc/weights/
 *__pycache__
 .DS_Store
 .vscode/settings.json
+.DS_Store

@@ -94,3 +94,4 @@ Refrences:
 - [Practical seq2seq](http://suriyadeepan.github.io/2016-12-31-practical-seq2seq/)
 - [Tensorflow Programmers Guide](https://www.tensorflow.org/programmers_guide/)
 - [Emotion Detection and Recognition from Text Using Deep Learning](https://www.microsoft.com/developerblog/2015/11/29/emotion-detection-and-recognition-from-text-using-deep-learning/)
+- [TextTone: Expressing Emotion Through Text](https://pdfs.semanticscholar.org/cde8/8eb104e3673e2abdee4806e0bbe32aa99e1d.pdf)

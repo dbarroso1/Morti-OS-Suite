@@ -45,7 +45,7 @@ source activate morti_os_suite
 pip install tensorflow==1.7 django
  ```
 
-### Step 2 - Create a Django Project
+### Extra - Create a Django Project
 
 ```Python
  # Create Django Project

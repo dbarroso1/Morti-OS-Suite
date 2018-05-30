@@ -45,50 +45,29 @@ source activate morti_os_suite
 pip install tensorflow==1.7 django
  ```
 
-### Extra - Create a Django Project
+---
 
-```Python
- # Create Django Project
-django-admin startproject morti_suite
+## The Road So Far. . . (v1.0.2)
 
- # Test Server
-python manage.py migrate
-python manage.py runserver
-```
+- RTC partially complete (Basic Deep NLP Chatbot w/ Web UI)
+    - [Deep QA Chatbot by Conchylicultor](https://github.com/Conchylicultor/DeepQA/tree/92863e2929580818f866f16969909fe2093d41d1) _Repurposed_
+    - Web UI (RTC Only)
+
+## . . .Whats To Come (v1.0.3)
+
+- **Morti-OS Suite UI**: All in one web Interface, where I can test and play with all aspects of Morti-OS. Including sections like the LSI, RTC and Morti Eyes.
+- **Morti Eyes** (Image recognition)
+    - Image Classification: Eventually i want to use collected Dashcam footage to train Morti to identify Cars, License Plates, ect...
+- **Morti Voice** (Audio Generation): Using RTC, Morti can generate Lyrics, then synthesis music.
+
+- RTC (Improvements):
+    - Train Model on GPU for better faster Models
+    - include a Commands Function, where we can say a certain phrase and instead of responding with the Seq2seq model it will identify the command and execute (_commands like: calculate this, where is this, or what is this_)
 
 ---
 
-# Morti-OS: Relationship Trained Communication (RTC) Module
-
-The RTC Module is used by Morti as its main method of communication with the user. The goal of the RTC Module is to process user inputs, and define the context of said input, while calculating an emotional value (1-10) to the expression given.
-
-```text
-[ Conversation Example ]
-
-You: Hello Morti, today was a bad day
-Morti: why was it a bad day?
-You: my car broke down in the highway!
-Morti: well that sounds frustrating
-
-// Morti Understands that a personal Item was damaged
-````
-
-## EQE Emotional Quantification Enigne
-
-The Goal with EQE is to find a means of guiding Morti's interactions (Both Communicative and Physically) by Emotions.
-
-## Quantifying Emotions in Communication
-
-The EQE, when used in communications means that Morti will base his responses on the _tone_ and _context_ of a conversation. When Building the Seq2Seq Models I would include two Corpi, one of Identifyed Negative Conversations, and one with verifyed Positive Conversations.
-
-Alternativley I can include a training function that allaws me to index conversations as Negative or positive while i converse with Morti. The goal is to have Multiple Dictionaries with phrases of varying emotional States that Morti can use to identify a conversation and react accordingly.
-
-Morti is planned to have a vast array of emotional responses. Although the amount of emotional responses are limited to Six Primary Emotions, Morti can calculate multiple emotions to get acheive Secondary Emotional responses.
-
-Each word in the Input Phrase is seperated from the whole, given a corresponding Emotional Weight, and is then its averaged out to find the phrases Emotional Score.
-
----
 Refrences:
+
 - [NLTK Natural Language Toolkit](https://www.nltk.org/)
 - [Chatbots with Seq2Seq](http://suriyadeepan.github.io/2016-06-28-easy-seq2seq/)
 - [Practical seq2seq](http://suriyadeepan.github.io/2016-12-31-practical-seq2seq/)

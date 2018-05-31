@@ -21,17 +21,10 @@
 
 # Instalation/Requirments
 
-I have included an environment setup script in `\RTC\bin` named `env_setup.sh` this should create the Anaconda Environment and Install necessary packages. This script should only be run on initial setup.
-
-```bash
-cd Morti-OS/bin
-bash env_setup.sh
-# follow instructions for installation
-```
-
-### Packages Included
+Morti was built and tested on Anaconda with Python 3.5. Most of the required packages are straight forward. Chatbot was built on Tensorflow 1.4 but has been tested on versions up to 1.8 without issues. Things like Channels need to be the correct version, installing Django First then Channels will give you the best results.
 
 ```python
+# Required Packages
 Anaconda
 - Python==3.5
     - nltk
@@ -41,14 +34,26 @@ Anaconda
     - tqdm
 ```
 
+### Setup Script
+
+I have included an environment setup script in `\RTC\bin` named `env_setup.sh` this should create the Anaconda Environment and Install necessary packages. This script should only be run on initial setup.
+
+```bash
+cd Morti-OS/bin
+bash env_setup.sh
+# follow instructions for installation
+```
+
+
+
 ---
 
 ## The Road So Far in v1.0.2
 
 - Anaconda Setup Script `bin/env_setup.sh` allows for easy environment creation
 - RTC repurpose complete (Basic Deep NLP Chatbot w/ Web UI)
-    - [Deep QA Chatbot by Conchylicultor](https://github.com/Conchylicultor/DeepQA/tree/92863e2929580818f866f16969909fe2093d41d1) _Repurposed_
-        - Working/Tested on `Tensorflow>=1.7`
+    - _Repurposed_ [Deep QA Chatbot](https://github.com/Conchylicultor/DeepQA/tree/92863e2929580818f866f16969909fe2093d41d1) by Conchylicultor
+        - Working/Tested on `Tensorflow 1.7 && 1.8`
         - Web UI Included (RTC Only)
 
 ## Whats To Come for v1.0.3

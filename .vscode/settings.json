@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Anaconda3\\envs\\morti_os_suite\\python.exe"
+    "python.pythonPath": "C:\\anaconda3\\envs\\morti_os\\python.exe",
+    "python.formatting.provider": "yapf"
 }

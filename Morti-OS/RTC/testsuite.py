@@ -26,7 +26,7 @@ import unittest
 import io
 import sys
 
-from chatbot import chatbot
+from chatbot_website.chatbot import chatbot
 
 
 class TestChatbot(unittest.TestCase):

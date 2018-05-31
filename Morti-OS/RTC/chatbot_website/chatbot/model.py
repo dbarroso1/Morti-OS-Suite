@@ -19,7 +19,9 @@ Model to predict the next sentence given an input sequence
 
 """
 
+import os  # Files management
 import tensorflow as tf
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 from  .textdata import Batch
 

@@ -6,3 +6,6 @@ def mainView(request):
         request (Obj): django request object
     """
     return render(request, 'index.html', {})
+
+def chatroom(request):
+    return render(request, 'chatroom.html',{})

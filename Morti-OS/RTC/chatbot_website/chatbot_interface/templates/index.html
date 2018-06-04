@@ -7,56 +7,24 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="icon" href="{% static 'images/icon.png' %}">
-	<!--[if lte IE 8]><script src="{% static 'assets/js/html5shiv.js' %}"></script><![endif]-->
-	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
-	<!--[if lte IE 9]><link rel="stylesheet" href="{% static 'assets/css/ie9.css' %}" /><![endif]-->
-	<!--[if lte IE 8]><link rel="stylesheet" href="{% static 'assets/css/ie8.css' %}" /><![endif]-->
+	<link rel="stylesheet" href="{% static 'assets/css/morti.css' %}" />
 	<noscript>
 		<link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" />
 	</noscript>
 </head>
 
-<body class="is-loading">
-	<!-- Wrapper -->
-	<div id="wrapper">
-
-		<!-- Main -->
-		<section id="main">
-			<header>
-				<span class="avatar">
-					<img width="90" src="{% static 'images/morti.png' %}" alt="" />
-					<h1> - Morti - </h1>
-				</span>
-			</header>
-
-			<div id="chat_zone">
-			</div>
-			<form id="chat_form">
-				{% csrf_token %}
-				<div class="field">
-					<input type="text" name="name" id="message" placeholder="Say something..." />
-					<!--<button type="submit" id="go">Say it</button>-->
-				</div>
-			</form>
-		</section>
-
+<body>
+	<div class="sidebar">
+		<img width="90" src="{% static 'images/morti.png' %}" alt="" />
+		<hr>
+		<a href="/">Home</a>
+		<a href="#">About</a>
+		<a href="/chat">RTC Module</a>
+		<a href="#">LSI Module</a>
 	</div>
-
-	<!-- Scripts -->
-	<!--[if lte IE 8]><script src="{% static 'assets/js/respond.min.js' %}"></script><![endif]-->
-	<script>
-		if ('addEventListener' in window) {
-			window.addEventListener('load', function () {
-				document.body.className = document.body.className.replace(/\bis-loading\b/, '');
-			});
-			document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-		}
-	</script>
-
-	<script type="text/javascript" src='{% static "js/jquery-3.1.0.min.js" %}'></script>
-	<script type="text/javascript" src='{% static "js/reconnecting-websocket.js" %}'></script>
-	<script type="text/javascript" src='{% static "js/chat.js" %}'></script>
-
+	<div class="content">
+		{% block chatroom %}{% endblock chatroom %}
+	</div>
 </body>
 
 </html>

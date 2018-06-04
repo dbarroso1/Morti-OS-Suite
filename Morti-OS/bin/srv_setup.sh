@@ -12,7 +12,8 @@ wait
 
 echo ""
 echo "--- --- --- Starting Morti-OS Suite --- --- ---"
-export CHATBOT_SECRET_KEY="my-secret-key"
+EXP="export" 
+$EXP CHATBOT_SECRET_KEY="my-secret-key"
 python RTC/chatbot_website/manage.py makemigrations
 wait
 python RTC/chatbot_website/manage.py migrate

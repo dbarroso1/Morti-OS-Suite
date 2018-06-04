@@ -5,4 +5,5 @@ from .chatbotmanager import ChatbotManager
 
 urlpatterns = [
     url(r'^$', views.mainView),
+    url(r'^chat/', views.chatroom),
 ]

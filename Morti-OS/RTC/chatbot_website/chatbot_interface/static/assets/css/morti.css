@@ -1,0 +1,81 @@
+.sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    background: #2e2e2e;
+    height: 100vh;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #d1d1d1;
+    display: block;
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.sidebar a:hover {
+    color: #01cdfe;
+    background: #ff71cd46;
+}
+
+.sidebar img {
+    padding-top: 12px;
+    display: block;
+    margin: 0 auto;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    max-width: 720px;
+    left: 15%;
+}
+.header h2{
+    font-weight: 200;
+}
+#wrapper {
+    border-radius: 3px;
+    height: 512px;
+    margin: 12px;
+    padding: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#chat_zone {
+    height: 70%;
+    width: 512px;
+    overflow-y: scroll;
+    border-radius: 6px;
+    font-size: 0.9em;
+    padding: 12px;
+    background: -moz-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(214, 177, 205, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(214, 177, 205, 1) 100%);
+    background: linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(214, 177, 205, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#d6b1cd', GradientType=0);
+}
+
+.question {
+    color: #919191;
+    text-align: right;
+    margin: 0 0 0.1em 0;
+}
+
+.answer {
+    text-align: left;
+    margin: 0 0 0.3em 0;
+}
+
+.field {
+    position: absolute;
+    bottom: 32px;
+}
+
+.field input {
+    width: 500px;
+    margin-top: 6px;
+    padding: 4px;
+}

@@ -1,5 +1,7 @@
 
 Modules/rtc/weights/
+Morti-OS/RTC/save/
+.vscode/
 *node_modules
 *.sqlite3
 *package-lock.json
@@ -9,4 +11,4 @@ Modules/rtc/weights/
 .DS_Store
 .vscode/settings.json
 .DS_Store
-Morti-OS/RTC/save/
+.

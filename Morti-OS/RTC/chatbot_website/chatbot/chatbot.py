@@ -174,8 +174,7 @@ class Chatbot:
 
         # Saver/summaries
         self.writer = tf.summary.FileWriter(self._getSummaryName())
-        self.saver = tf.train.Saver(max_to_keep=200)
-
+        # self.saver = tf.train.Saver([self.textData.word2id, self.textData.id2word], max_to_keep=200)
         # TODO: Fixed seed (WARNING: If dataset shuffling, make sure to do that after saving the
         # dataset, otherwise, all which cames after the shuffling won't be replicable when
         # reloading the dataset). How to restore the seed after loading ??

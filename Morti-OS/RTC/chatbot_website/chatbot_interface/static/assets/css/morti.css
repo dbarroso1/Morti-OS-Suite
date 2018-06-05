@@ -32,50 +32,129 @@
     position: absolute;
     top: 0;
     max-width: 720px;
-    left: 15%;
+    left: 200px;
 }
-.header h2{
+.header{
+    display: flex;
+    width: 512px;
+    background: #d1d1d1;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    padding-left: 12px;
+}
+.header h2 {
+    margin: 0;
     font-weight: 200;
+    padding-bottom: 3px;
 }
+
 #wrapper {
+    height: 400px;
+    width: 525px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border-radius: 3px;
-    height: 512px;
     margin: 12px;
     padding: 6px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 #chat_zone {
-    height: 70%;
-    width: 512px;
+    width: 500px;
+    height: inherit;
     overflow-y: scroll;
     border-radius: 6px;
     font-size: 0.9em;
     padding: 12px;
-    background: -moz-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(214, 177, 205, 1) 100%);
-    background: -webkit-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(214, 177, 205, 1) 100%);
-    background: linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(214, 177, 205, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#d6b1cd', GradientType=0);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12), inset 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+#chat_form {
+    margin-top: 5px;
+}
+
+#chat_form input {
+    background: #f3f3f3;
+    width: inherit;
+    border-radius: 4px;
+    border: none;
+    width: 99%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 3px;
 }
 
 .question {
-    color: #919191;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    float: right;
+    width: 50%;
+    padding: 12px;
+    position: relative;
+    background: #bae1ff;
+    border-radius: .4em;
+    color: #202020;
     text-align: right;
-    margin: 0 0 0.1em 0;
+}
+
+.question:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-left-color: #bae1ff;
+    border-right: 0;
+    border-top: 0;
+    margin-top: -5px;
+    margin-right: -10px;
 }
 
 .answer {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    float: left;
+    width: 50%;
+    padding: 12px;
     text-align: left;
-    margin: 0 0 0.3em 0;
+    position: relative;
+    color: #FFF;
+    background: #392f43;
+    border-radius: .4em;
+    margin: 0;
 }
 
-.field {
+.answer:before {
+    content: "Morti: ";
+    font-weight: bold;
+}
+
+.answer:after {
+    content: '';
     position: absolute;
-    bottom: 32px;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: #392f43;
+    border-left: 0;
+    border-top: 0;
+    margin-top: -5px;
+    margin-left: -10px;
 }
 
-.field input {
-    width: 500px;
-    margin-top: 6px;
-    padding: 4px;
+.chat_time {
+    font-size: 10px;
+    padding-left: 6px;
+}
+
+.chat_time .left {
+    float: left;
+}
+
+.chat_time .right {
+    padding-right: 6px;
+    float: right;
 }

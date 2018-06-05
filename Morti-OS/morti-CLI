@@ -1,0 +1,40 @@
+#!/bin/bash
+
+PS3='#: Please enter your choice: '
+options=("Start Morti-OS" "Create Environment" "Exit")
+
+create_env(){
+    cd bin/
+    bash env_setup.sh
+}
+start_morti(){
+    cd bin/
+    bash srv_setup.sh
+}
+
+echo "======================================================="
+echo -e "           Welcome to \e[35mMorti-OS CLI\e[0m (v1.0.3)"
+echo "======================================================="
+echo " 1. Create Environment:"
+echo ""
+echo " 2. Start Morti-OS:"
+echo ""
+echo " For More Info go to:"
+echo "     https://github.com/dbarroso1/Morti-OS-Suite/    "
+echo "======================================================="
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Start Morti-OS")
+            echo "#: Initializing Morti"; start_morti
+            ;;
+        "Create Environment")
+            echo "#: Creating Anaconda Environment"; create_env
+            ;;
+        "Exit")
+            break
+            ;;
+        *) echo "#: invalid option $REPLY";;
+    esac
+done
+

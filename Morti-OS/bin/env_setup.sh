@@ -5,7 +5,7 @@ echo -e "\e[31mOnly Run this script once if you havent done so already\e[0m"
 echo "======================================================="
 
 echo "#: Anaconda Environment Setup"
-read -p 'Environment Name: ' envname
+read -p '#: Environment Name: ' envname
 
 echo "#: Creating Environment... "
 conda create -n ${envname,,} python=3.5 anaconda

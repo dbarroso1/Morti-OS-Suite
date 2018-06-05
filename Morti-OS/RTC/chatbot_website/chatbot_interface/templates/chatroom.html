@@ -1,15 +1,23 @@
-{% extends "index.html" %} {% block chatroom %} {% load staticfiles %}
+{% extends "index.html" %} 
+
+{% block chatroom %} 
+
+{% load staticfiles %}
+
 <div id="wrapper">
     <div class="header">
-        <h2>Morti Chat</h2>
+        <h2> Morti Chat </h2>
+        <sub>&nbsp;(v1.0.3) </sub>
     </div>
-    <div id="chat_zone">
+
+    <div id="chat_zone" style="background: url({% static 'images/bg2.jpg' %}) repeat;">
+        <!--Chat Goes Here-->
     </div>
 
     <form id="chat_form">
         {% csrf_token %}
         <div class="field">
-            <input type="text" name="name" id="message" placeholder="Say something..." />
+            <input type="text" name="name" id="message" placeholder="Type a message" />
         </div>
     </form>
 </div>

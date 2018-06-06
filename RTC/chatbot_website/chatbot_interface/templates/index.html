@@ -13,14 +13,23 @@
 	</noscript>
 </head>
 
-<body>
-	<div class="sidebar">
-		<img width="90" src="{% static 'images/morti.png' %}" alt="" />
-		<hr>
-		<a href="/">Home</a>
-		<a href="#">About</a>
-		<a href="/chat">RTC Module</a>
-		<a href="#">LSI Module</a>
+<body style="overflow-y: hidden">
+	<div class="navbar">
+		<img width="48px" src="{% static 'images/morti_icon.png' %}" alt="" />
+		<ul>
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="/">About</a>
+			</li>
+			<li>
+				<a href="chat/">RTC Chat</a>
+			</li>
+			<li>
+				<a href="/">LSI Unity</a>
+			</li>
+		</ul>
 	</div>
 	<div class="content">
 		{% block chatroom %}{% endblock chatroom %}

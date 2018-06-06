@@ -1,40 +1,54 @@
-.sidebar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 200px;
-    background: #2e2e2e;
-    height: 100vh;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+.navbar {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100vw;
+    height: 48px;
+    background: #202020;
+    margin: -10px;
+    z-index: 10;
+    padding: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.sidebar a {
-    padding: 6px 8px 6px 16px;
+.navbar img {
+    padding-left: 12px;
+    padding-right: 12px;
+    float: left;
+    vertical-align: middle;
+}
+
+.navbar ul {
+    padding-top: 22px;
+    margin: 0;
+}
+
+.navbar li {
+    display: inline;
+    color: #fff;
+    font-size: 1.25em;
+    font-weight: 200;
+    margin-right: 4px;
+}
+
+.navbar li a {
+    border-radius: 4px 4px 0 0;
     text-decoration: none;
-    font-size: 16px;
-    color: #d1d1d1;
-    display: block;
+    color: inherit;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-align: center;
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-.sidebar a:hover {
-    color: #01cdfe;
-    background: #ff71cd46;
-}
-
-.sidebar img {
-    padding-top: 12px;
-    display: block;
-    margin: 0 auto;
+.navbar li a:hover {
+    background: #313131;
 }
 
 .content {
-    position: absolute;
-    top: 0;
-    max-width: 720px;
-    left: 200px;
+    padding: 12px; 
+    z-index: 0;
 }
-.header{
+
+.header {
     display: flex;
     width: 512px;
     background: #d1d1d1;
@@ -43,6 +57,7 @@
     border-radius: 4px;
     padding-left: 12px;
 }
+
 .header h2 {
     margin: 0;
     font-weight: 200;
@@ -50,33 +65,47 @@
 }
 
 #wrapper {
-    height: 400px;
-    width: 525px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    z-index: 1;
+    height: auto;
+    width: 757px;
     border-radius: 3px;
     margin: 12px;
     padding: 6px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
+#wrapper .col1 {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #d1d1d1;
+}
+
+#wrapper .col2 {
+    width: 29%;
+    float: right;
+    text-align: center;
+}
+
 #chat_zone {
     width: 500px;
-    height: inherit;
+    height: 512px;
     overflow-y: scroll;
     border-radius: 6px;
     font-size: 0.9em;
     padding: 12px;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12), inset 0 1px 2px rgba(0, 0, 0, 0.24);
 }
+
 #chat_form {
     margin-top: 5px;
+    width: 525px;
 }
 
 #chat_form input {
     background: #f3f3f3;
-    width: inherit;
+    width: 520px;
     border-radius: 4px;
     border: none;
     width: 99%;

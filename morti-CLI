@@ -1,40 +1,29 @@
-#!/bin/bash
+#!/usr/bin/env bash
+clear
 
-PS3='#: Please enter your choice: '
-options=("Start Morti-OS" "Create Environment" "Exit")
-
-create_env(){
-    cd bin/
-    bash env_setup.sh
+start_sv(){
+    cd RTC/
+    export CHATBOT_SECRET_KEY="my-secret-key"
+#   python chatbot_website/manage.py makemigrations; wait
+#   python chatbot_website/manage.py migrate; wait
+    python chatbot_website/manage.py runserver
 }
-start_morti(){
-    cd bin/
-    bash srv_setup.sh
+exit_all(){
+    echo "Shutting down, Goodbye!"
+    exit
 }
 
-echo "======================================================="
-echo -e "           Welcome to \e[35mMorti-OS CLI\e[0m (v1.0.3)"
-echo "======================================================="
-echo " 1. Create Environment:"
-echo ""
-echo " 2. Start Morti-OS:"
-echo ""
-echo " For More Info go to:"
-echo "     https://github.com/dbarroso1/Morti-OS-Suite/    "
-echo "======================================================="
-select opt in "${options[@]}"
-do
-    case $opt in
-        "Start Morti-OS")
-            echo "#: Initializing Morti"; start_morti
-            ;;
-        "Create Environment")
-            echo "#: Creating Anaconda Environment"; create_env
-            ;;
-        "Exit")
-            break
-            ;;
-        *) echo "#: invalid option $REPLY";;
-    esac
-done
+trap exit_all SIGINT
 
+echo "### Morti-OS Suite (v1.0.3) ###"
+echo
+
+read -p "#: Do you want to start Morti-OS Suite? (y/n): ";
+if [ $REPLY == "y" ]; then
+    start_sv
+elif [ $REPLY == "n" ]; then
+    echo "Sounds good, Goodbye!"
+    exit
+else
+    echo "I dont understand..."
+fi

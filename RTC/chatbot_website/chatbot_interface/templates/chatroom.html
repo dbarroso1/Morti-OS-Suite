@@ -1,38 +1,72 @@
 {% extends "index.html" %} {% block chatroom %} {% load staticfiles %}
 
+
 <div id="wrapper">
-    <div class="col2">
+    <div class="col1">
         <div style="text-align:left">
-            <h2 style="margin:0;">Hyperparams:</h2>
-            <ul style="list-style-type: none; padding-left:6px; font-size:12px;">
-                <li>globStep: {{ none }}</li>
-                <li>watsonMode: {{ none }}</li>
-                <li>autoEncode: {{ none }}</li>
-                <li>corpus: {{ none }}</li>
-                <li>datasetTag: {{ none }}</li>
-                <li>maxLength: {{ none }}</li>
-                <li>filterVocab: {{ none }}</li>
-                <li>skipLines: {{ none }}</li>
-                <li>vocabularySize: {{ none }}</li>
-                <li>hiddenSize: {{ none }}</li>
-                <li>numLayers: {{ none }}</li>
-                <li>softmaxSamples: {{ none }}</li>
-                <li>initEmbeddings: {{ none }}</li>
-                <li>embeddingSize: {{ none }}</li>
-                <li>embeddingSource: {{ none }}</li>
-            </ul>
-            <hr>
+            <h3 style="margin:0;font-weight:200;padding-bottom:4px;">Hyperparams:</h3>
+            <table>
+                <tr>
+                    <th>Version:</th>
+                    <td>v.{{ version }}</td>
+                </tr>
+                <tr>
+                    <th>Global Step: </td>
+                        <td>{{ glob }}</td>
+                </tr>
+                <tr>
+                    <th>Corpus:</th>
+                    <td>{{ corpus }}</td>
+                </tr>
+                <tr>
+                    <th>Max Length:</th>
+                    <td>{{ maxlen }}</td>
+                </tr>
+                <tr>
+                    <th>Filtered Vocab:</th>
+                    <td>{{ vocabfilter }}</td>
+                </tr>
+                <tr>
+                    <th>Vocab Size:</th>
+                    <td>{{ vocabsize }}</td>
+                </tr>
+                <tr>
+                    <th>Hidden Layer Size:</th>
+                    <td>{{ hiddensize }}</td>
+                </tr>
+                <tr>
+                    <th>Number of Layers:</th>
+                    <td>{{ numlayer }}</td>
+                </tr>
+                <tr>
+                    <th>Softmax Samples:</th>
+                    <td>{{ maxsample }}</td>
+                </tr>
+                <tr>
+                    <th>Initial Embeddings:</th>
+                    <td>{{ initemb }}</td>
+                </tr>
+                <tr>
+                    <th>Embedding Size:</th>
+                    <td>{{ embsize }}</td>
+                </tr>
+                <tr>
+                    <th>Embedding Source:</th>
+                    <td>{{ embsrc }}</td>
+                </tr>
+            </table>
+            <h3 style="margin:2px;font-weight:200;">Emotions:</h3>
             <h3 style="margin:2px;font-weight:200;">Scalar Graph:</h3>
-            <img width="200" src="{% static 'images/cost_graph.png' %}">
+            <h3 style="margin:2px;font-weight:200;">Word Predictions:</h3>
         </div>
     </div>
-    <div class="col1">
+    <div class="col2">
         <div class="header">
             <h2> Morti Chat </h2>
             <sub>&nbsp;(v1.0.3) </sub>
         </div>
 
-        <div id="chat_zone" style="background: url({% static 'images/bg2.jpg' %}) repeat;">
+        <div id="chat_zone">
             <!--Chat Goes Here-->
         </div>
 

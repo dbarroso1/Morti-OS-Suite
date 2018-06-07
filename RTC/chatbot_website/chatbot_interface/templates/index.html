@@ -8,6 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="icon" href="{% static 'images/icon.png' %}">
 	<link rel="stylesheet" href="{% static 'assets/css/morti.css' %}" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<noscript>
 		<link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" />
 	</noscript>
@@ -15,19 +18,39 @@
 
 <body style="overflow-y: hidden">
 	<div class="navbar">
-		<img width="48px" src="{% static 'images/morti_icon.png' %}" alt="" />
+		<img width="48px" height="48px" src="{% static 'images/morti_icon.png' %}" alt="" />
 		<ul>
 			<li>
-				<a href="/">Home</a>
+				<a href="/">
+					<i class="material-icons md-24">
+						home
+					</i>
+					<sub> Home</sub>
+				</a>
 			</li>
 			<li>
-				<a href="/">About</a>
+				<a href="chat/">
+					<i class="material-icons md-24">
+						chat
+					</i>
+					<sub> Chat</sub>
+				</a>
 			</li>
 			<li>
-				<a href="chat/">RTC Chat</a>
+				<a href="/">
+					<i class="material-icons md-24">
+						mms
+					</i>
+					<sub> Live</sub>
+				</a>
 			</li>
 			<li>
-				<a href="/">LSI Unity</a>
+				<a href="/">
+					<i class="material-icons md-24">
+						help
+					</i>
+					<sub> Help</sub>
+				</a>
 			</li>
 		</ul>
 	</div>

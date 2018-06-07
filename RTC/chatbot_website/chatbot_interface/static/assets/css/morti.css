@@ -1,3 +1,73 @@
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot);
+    /* For IE6-8 */
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'), url(https://example.com/MaterialIcons-Regular.woff) format('woff'), url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+/* Rules for sizing the icon. */
+
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+
+.material-icons.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+
+.material-icons.md-light {
+    color: rgba(255, 255, 255, 1);
+}
+
+.material-icons.md-light.md-inactive {
+    color: rgba(255, 255, 255, 0.3);
+}
+
 .navbar {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100vw;
@@ -17,8 +87,8 @@
 }
 
 .navbar ul {
-    padding-top: 22px;
     margin: 0;
+    padding-top: 4px;
 }
 
 .navbar li {
@@ -26,35 +96,45 @@
     color: #fff;
     font-size: 1.25em;
     font-weight: 200;
-    margin-right: 4px;
+    margin-right: 12px;
+    vertical-align: middle;
 }
 
 .navbar li a {
-    border-radius: 4px 4px 0 0;
+    vertical-align: middle;
     text-decoration: none;
     color: inherit;
     padding-left: 6px;
     padding-right: 6px;
     text-align: center;
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
 .navbar li a:hover {
-    background: #313131;
+    color: aqua;
+}
+
+.navbar li a i {
+    display: inline-flex;
+    vertical-align: bottom !important;
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+hr {
+    border: 1px solid #d4d4d4;
 }
 
 .content {
-    padding: 12px; 
+    padding: 12px;
     z-index: 0;
 }
 
 .header {
     display: flex;
-    width: 512px;
+    width: 96%;
     background: #d1d1d1;
-    margin-top: 5px;
     margin-bottom: 5px;
     border-radius: 4px;
+    padding: 4px;
     padding-left: 12px;
 }
 
@@ -66,30 +146,50 @@
 
 #wrapper {
     z-index: 1;
-    height: auto;
-    width: 757px;
+    height: 640px;
+    width: 900px;
     border-radius: 3px;
     margin: 12px;
     padding: 6px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-#wrapper .col1 {
-    width: 70%;
+#wrapper .col2 {
+    width: 65%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-right: 1px solid #d1d1d1;
 }
 
-#wrapper .col2 {
-    width: 29%;
+#wrapper .col1 {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 34%;
+    height: inherit;
     float: right;
     text-align: center;
 }
 
+#wrapper .col1 th {
+    font-size: 12px;
+    width: 50%;
+    color: #636363;
+    text-align: left;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+#wrapper .col1 td {
+    padding-right: 4px;
+    width: 50%;
+    border-bottom: 1px solid #e7e7e7;
+    font-size: 12px;
+    text-align: right;
+}
+
 #chat_zone {
-    width: 500px;
+    width: 95%;
+    background: url('../../../static/images/bg2.jpg') repeat;
     height: 512px;
     overflow-y: scroll;
     border-radius: 6px;
@@ -100,7 +200,7 @@
 
 #chat_form {
     margin-top: 5px;
-    width: 525px;
+    width: 99%;
 }
 
 #chat_form input {
@@ -112,6 +212,7 @@
     padding-top: 6px;
     padding-bottom: 6px;
     padding-left: 3px;
+    border: 1px solid #d4d4d4;
 }
 
 .question {

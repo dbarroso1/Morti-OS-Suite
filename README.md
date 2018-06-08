@@ -2,18 +2,15 @@
 
 ## What is Morti-OS
 
-&nbsp;&nbsp;&nbsp;&nbsp;Morti stands for Machine Operated Relationship Trained Input-Output System. Morti-OS is an Artificially Intelligent Companion, he was built for the purpose of exploring and researching the evolution of information and how its processed, in order to get a better understanding of how the human brain has evolved.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Morti stands for `Machine Operated Relationship Trained Input-Output System`. Morti-OS is an Artificially Intelligent Companion, he was built for the purpose of exploring and researching the evolution of information and how its processed, in order to get a better understanding of how the human brain has evolved.
+
 &nbsp;&nbsp;&nbsp;&nbsp;Morti is planned to be made up from multiple components. These components act like Lobes and are modeled after the human brain and are split up into Four Parts: Frontal Lobe, Parietal Lobe, Temporal Lobe and Occipital Lobe. Each Lobe has multiple modules contained inside it. Modules act as different sections to Mortis Brain, one such module is the ETC (Emotionally Trained Communication) Module. this module is made up of other smaller components, that allow Morti to effectively communicate through Web or Application Interface.
-
-
-
 
 ## Requirments
 
 Morti was built and tested on Anaconda with Python 3.5. Most of the required packages are straight forward. Chatbot was built on Tensorflow 1.4 but has been tested on versions up to 1.8 without issues. Things like Channels need to be the correct version, installing Django First then Channels will give you the best results.
 
 ```python
-# Required Packages
 Anaconda
 - Python==3.5
     - nltk
@@ -28,6 +25,7 @@ Anaconda
 ## Installation
 
 ### Automatic Setup
+
 While this is a work in progress, i have included a simple CLI for setting up and running Morti. The CLI will allow you to:
 
 - Create the Anaconda Environment (Work in Progress).
@@ -56,7 +54,7 @@ Install Packages
 ```python
     # Using requirements.txt
     pip install -r requirements.txt
- 
+
     # Manual installation
     pip install tensorflow==1.7 django 
     pip install tqdm nltk agis-redis

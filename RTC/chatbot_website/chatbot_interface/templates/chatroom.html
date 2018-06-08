@@ -73,12 +73,26 @@
         <form id="chat_form">
             {% csrf_token %}
             <div class="field">
+                <button disabled id="voice-btn" onclick="nothingbro()">
+                    <i class="material-icons">
+                        keyboard_voice
+                    </i>
+                </button>
                 <input type="text" name="name" id="message" placeholder="Type a message" />
+                <!--Speach to Text Button-->
+                <button id="send-btn">
+                    <i class="material-icons">
+                        send
+                    </i>
+                </button>
             </div>
         </form>
     </div>
 </div>
 <script>
+    function nothingbro(){
+        console.log("Audio Button Bitch")
+    }
     if ('addEventListener' in window) {
         window.addEventListener('load', function () {
             document.body.className = document.body.className.replace(/\bis-loading\b/, '');

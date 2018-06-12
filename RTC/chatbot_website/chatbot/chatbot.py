@@ -29,8 +29,8 @@ import math
 from tqdm import tqdm  # Progress bar
 from tensorflow.python import debug as tf_debug
 
-from chatbot.textdata import TextData
-from chatbot.model import Model
+from .textdata import TextData
+from .model import Model
 
 
 class Chatbot:

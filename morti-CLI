@@ -1,29 +1,56 @@
 #!/usr/bin/env bash
-clear
-
 start_sv(){
     cd RTC/
     export CHATBOT_SECRET_KEY="my-secret-key"
-#   python chatbot_website/manage.py makemigrations; wait
-#   python chatbot_website/manage.py migrate; wait
+    python chatbot_website/manage.py makemigrations; wait
+    python chatbot_website/manage.py migrate; wait
     python chatbot_website/manage.py runserver
+}
+train_morti(){
+    cd RTC/
+    python main.py
+}
+ui_selection(){
+    PS3='Please enter your choice: '
+    options=("Start: Morti-OS Webserver" "Train: Morti-OS Chatbot" "Help: Morti-OS Suite" "Quit")
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "Start: Morti-OS Webserver")
+                echo "#: Starting Web Server..."
+                start_sv
+            ;;
+            "Train: Morti-OS Chatbot")
+                echo "#: Initializing Training..."
+                train_morti
+            ;;
+            "Help: Morti-OS Suite")
+                echo "#: Coming Soon! Please ignore this Choice"
+                ui_selection
+                break
+            ;;
+            "Quit")
+                trap exit_all SIGINT
+                break
+            ;;
+            *) echo "invalid option $REPLY";;
+        esac
+    done
 }
 exit_all(){
     echo "Shutting down, Goodbye!"
     exit
 }
 
-trap exit_all SIGINT
 
-echo "### Morti-OS Suite (v1.0.3) ###"
+clear
 echo
+echo "WARNING: Make sure to activate the anaconda environment with 'source activate morti_os'"
+echo
+echo "### Morti-OS Suite (v1.0.3) ###"
+echo "#: Loading ...         "
+VERSION=$(python -c "import tensorflow as tf; print(tf.__version__);")
+echo "#: Your current Tensorflow version is: $VERSION"
+echo "==============================="
 
-read -p "#: Do you want to start Morti-OS Suite? (y/n): ";
-if [ $REPLY == "y" ]; then
-    start_sv
-elif [ $REPLY == "n" ]; then
-    echo "Sounds good, Goodbye!"
-    exit
-else
-    echo "I dont understand..."
-fi
+ui_selection

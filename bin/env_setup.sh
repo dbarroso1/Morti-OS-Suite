@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+echo "WARNING: Do Not Use this Script!"
+exit
+
+: <<'END'
 echo "======================================================="
 echo "        Setting up Anaconda Env for Morti-OS            "
 echo -e "\e[31mOnly Run this script once if you havent done so already\e[0m"
@@ -28,3 +32,4 @@ wait
 
 echo "#: Morti-OS Env has been Setup Succefuly"
 read -p '#: Press (Enter) to exit setup.' envname
+END

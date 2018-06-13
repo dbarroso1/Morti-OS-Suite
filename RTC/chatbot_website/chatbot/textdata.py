@@ -72,9 +72,11 @@ class TextData:
         """
         # Model parameters
         self.args = args
-
+        # New Data Path Inside Django Directory
+        self.newDataPath = 'chatbot_website' + os.sep + 'chatbot' + os.sep + 'data'
+        
         # Path variables
-        self.corpusDir = os.path.join(self.args.rootDir, 'data', self.args.corpus)
+        self.corpusDir = os.path.join(os.getcwd(), self.newDataPath, self.args.corpus)
         basePath = self._constructBasePath()
         self.fullSamplesPath = basePath + '.pkl'  # Full sentences length/vocab
         self.filteredSamplesPath = basePath + '-length{}-filter{}-vocabSize{}.pkl'.format(
@@ -108,7 +110,7 @@ class TextData:
     def _constructBasePath(self):
         """Return the name of the base prefix of the current dataset
         """
-        path = os.path.join(self.args.rootDir, 'data' + os.sep + 'samples' + os.sep)
+        path = os.path.join(self.args.rootDir, self.newDataPath + os.sep + 'samples' + os.sep)
         path += 'dataset-{}'.format(self.args.corpus)
         if self.args.datasetTag:
             path += '-' + self.args.datasetTag
@@ -284,7 +286,7 @@ class TextData:
             filename (str): pickle filename
         """
 
-        with open(os.path.join(filename), 'wb') as handle:
+        with open(os.path.join(self.newDataPath, filename), 'wb') as handle:
             data = {  # Warning: If adding something here, also modifying loadDataset
                 'word2id': self.word2id,
                 'id2word': self.id2word,
@@ -298,7 +300,7 @@ class TextData:
         Args:
             filename (str): pickle filename
         """
-        dataset_path = os.path.join(filename)
+        dataset_path = os.path.join(os.getcwd(), self.newDataPath, filename)
         print('Loading dataset from {}'.format(dataset_path))
         with open(dataset_path, 'rb') as handle:
             data = pickle.load(handle)  # Warning: If adding something here, also modifying saveDataset

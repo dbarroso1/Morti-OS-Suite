@@ -65,7 +65,7 @@ class Chatbot:
         self.sess = None
 
         # Filename and directories constants
-        self.MODEL_DIR_BASE = 'save' + os.sep + 'model'
+        self.MODEL_DIR_BASE = 'chatbot_website/chatbot/save' + os.sep + 'model'
         self.MODEL_NAME_BASE = 'model'
         self.MODEL_EXT = '.ckpt'
         self.CONFIG_FILENAME = 'params.ini'

@@ -11,7 +11,7 @@ train_morti(){
     python main.py
 }
 ui_selection(){
-    PS3='Please enter your choice: '
+    PS3='#: Please enter your choice: '
     options=("Start: Morti-OS Webserver" "Train: Morti-OS Chatbot" "Help: Morti-OS Suite" "Quit")
     select opt in "${options[@]}"
     do
@@ -37,20 +37,40 @@ ui_selection(){
         esac
     done
 }
+showLoading() {
+    mypid=$!
+    loadingText=$1
+    
+    echo -ne "$loadingText\r"
+    
+    while kill -0 $mypid 2>/dev/null; do
+        echo -ne "$loadingText.\r"
+        sleep 0.5
+        echo -ne "$loadingText..\r"
+        sleep 0.5
+        echo -ne "$loadingText...\r"
+        sleep 0.5
+        echo -ne "\r\033[K"
+        echo -ne "$loadingText\r"
+        sleep 0.5
+    done
+    echo
+    echo "# Finished Loading" 
+}
 exit_all(){
     echo "Shutting down, Goodbye!"
     exit
 }
 
-
-clear
-echo
-echo "WARNING: Make sure to activate the anaconda environment with 'source activate morti_os'"
-echo
-echo "### Morti-OS Suite (v1.0.3) ###"
-echo "#: Loading ...         "
 VERSION=$(python -c "import tensorflow as tf; print(tf.__version__);")
-echo "#: Your current Tensorflow version is: $VERSION"
-echo "==============================="
+clear & showLoading "# Loading"
+echo
+echo
+echo -e "\e[34m========\e[0m\e[35m========\e[0m \e[1mMorti-OS Suite (v1.0.4)\e[0m \e[35m========\e[0m\e[34m========\e[0m"
+echo -e "#: \e[33mNOTE\e[0m: Make sure to activate the anaconda \n environment with '\e[35msource activate morti_os\e[0m'"
+echo
+echo -e "#: Your current \e[33mTensorflow\e[0m version is: \e[32m$VERSION\e[0m"
+echo -e "\e[34m========\e[0m\e[35m========\e[0m \e[1m=======================\e[0m \e[35m========\e[0m\e[34m========\e[0m"
+echo
 
 ui_selection

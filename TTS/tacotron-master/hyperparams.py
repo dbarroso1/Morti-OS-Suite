@@ -13,14 +13,14 @@ class Hyperparams:
     vocab = "PE abcdefghijklmnopqrstuvwxyz'.?" # P: Padding E: End of Sentence
 
     # data
-    data = "/data/private/voice/LJSpeech-1.0"
+    data = "data/wheatly"
     # data = "/data/private/voice/nick"
     test_data = 'harvard_sentences.txt'
     max_duration = 10.0
 
-    # signal processing
-    sr = 22050 # Sample rate.
-    n_fft = 2048 # fft points (samples)
+    # signal processing 
+    sr = 48000 # Sample rate. 22050
+    n_fft = 2400 # fft points (samples)
     frame_shift = 0.0125 # seconds
     frame_length = 0.05 # seconds
     hop_length = int(sr*frame_shift) # samples.

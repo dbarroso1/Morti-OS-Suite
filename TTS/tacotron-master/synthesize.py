@@ -21,23 +21,18 @@ import numpy as np
 def synthesize():
     if not os.path.exists(hp.sampledir): os.mkdir(hp.sampledir)
 
-    # Load graph
     g = Graph(mode="synthesize"); print("Graph loaded")
-
-    # Load data
     texts = load_data(mode="synthesize")
-
     saver = tf.train.Saver()
+    
     with tf.Session() as sess:
         saver.restore(sess, tf.train.latest_checkpoint(hp.logdir)); print("Restored! Model: {}".format(hp.logdir))
 
-        # Feed Forward
-        ## mel
         y_hat = np.zeros((texts.shape[0], 200, hp.n_mels*hp.r), np.float32)  # hp.n_mels*hp.r
         for j in tqdm.tqdm(range(200)):
             _y_hat = sess.run(g.y_hat, {g.x: texts, g.y: y_hat})
             y_hat[:, j, :] = _y_hat[:, j, :]
-        ## mag
+
         mags = sess.run(g.z_hat, {g.y_hat: y_hat})
         for i, mag in enumerate(mags):
             print("File {}.wav is being generated ...".format(i+1))

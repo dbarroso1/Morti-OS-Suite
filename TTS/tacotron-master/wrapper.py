@@ -7,3 +7,6 @@ phrase = sys.argv[1]
 with open('harvard_sentences.txt','w') as f:
     f.write("# Daemon Log \n1. "+str(phrase)+"\n")
 synthesize()
+print("Playing Sound...")
+playsound('samples/1.wav')
+print("All Done!")

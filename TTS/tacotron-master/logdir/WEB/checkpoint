@@ -1,6 +1,0 @@
-model_checkpoint_path: "model_gs_200k"
-all_model_checkpoint_paths: "model_gs_196k"
-all_model_checkpoint_paths: "model_gs_197k"
-all_model_checkpoint_paths: "model_gs_198k"
-all_model_checkpoint_paths: "model_gs_199k"
-all_model_checkpoint_paths: "model_gs_200k"

@@ -104,16 +104,16 @@ def get_batch():
         text.set_shape((None,))
         mel.set_shape((None, hp.n_mels*hp.r))
         mag.set_shape((None, hp.n_fft//2+1))
+        # bucket_bounds=[i for i in range(minlen + 1, maxlen - 1, 20)]
 
         # Batching
         _, (texts, mels, mags, fnames) = tf.contrib.training.bucket_by_sequence_length(
                                             input_length=text_length,
                                             tensors=[text, mel, mag, fname],
                                             batch_size=hp.batch_size,
-                                            bucket_boundaries=[i for i in range(minlen + 1, maxlen - 1, 20)],
+                                            bucket_boundaries=[1,25],
                                             num_threads=16,
                                             capacity=hp.batch_size * 4,
                                             dynamic_pad=True)
 
     return texts, mels, mags, fnames, num_batch
-

@@ -10,9 +10,13 @@ train_morti(){
     cd RTC/
     python main.py
 }
+train_tts(){
+    cd TTS/tactron-master/
+    python utils.py
+}
 ui_selection(){
     PS3='#: Please enter your choice: '
-    options=("Start: Morti-OS Webserver" "Train: Morti-OS Chatbot" "Help: Morti-OS Suite" "Quit")
+    options=("Start: Morti-OS Webserver" "Train: Morti-OS Chatbot" "Morti-OS Suite: TTS" "Quit")
     select opt in "${options[@]}"
     do
         case $opt in
@@ -24,10 +28,39 @@ ui_selection(){
                 echo "#: Initializing Training..."
                 train_morti
             ;;
-            "Help: Morti-OS Suite")
-                echo "#: Coming Soon! Please ignore this Choice"
-                ui_selection
+            "Morti-OS Suite: TTS")
+                echo "#: Text To Speach"
+                ui_selection_tts
+            ;;
+            "Quit")
+                trap exit_all SIGINT
                 break
+            ;;
+            *) echo "invalid option $REPLY";;
+        esac
+    done
+}
+
+ui_selection_tts(){
+    echo
+    echo -e "\e[34m========\e[0m\e[35m========\e[0m \e[1mMorti-OS Suite TTS (v1.0.4)\e[0m \e[35m========\e[0m\e[34m========\e[0m"
+
+    PS3='#: Please enter your choice: '
+    options=("Start: Morti-OS TTS" "Train: Morti-OS TTS Training" "Train: Morti-OS TTS Training (PrePro)" "Quit")
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "Start: Morti-OS TTS")
+                echo "#: Starting Web Server..."
+                start_sv
+            ;;
+            "Train: Morti-OS TTS Training")
+                echo "#: Initializing Training..."
+                train_morti
+            ;;
+            "Train: Morti-OS TTS Training w/ PrePro")
+                echo "#: Initializing Training..."
+                train_tts
             ;;
             "Quit")
                 trap exit_all SIGINT

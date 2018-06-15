@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/usr/bin/python
+#/usr/bin/python2
 '''
 By kyubyong park. kbpark.linguist@gmail.com. 
 https://www.github.com/kyubyong/tacotron
@@ -13,8 +13,7 @@ class Hyperparams:
     vocab = "PE abcdefghijklmnopqrstuvwxyz'.?" # P: Padding E: End of Sentence
 
     # data
-    data = "data/wheatly"
-    # data = "/data/private/voice/LJSpeech-1.0"
+    data = "/data/private/voice/LJSpeech-1.0"
     # data = "/data/private/voice/nick"
     test_data = 'harvard_sentences.txt'
     max_duration = 10.0
@@ -43,7 +42,7 @@ class Hyperparams:
 
     # training scheme
     lr = 0.001 # Initial learning rate.
-    logdir = "logdir/01"
+    logdir = "logdir/WEB"
     sampledir = 'samples'
     batch_size = 32
 

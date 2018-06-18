@@ -1,8 +1,13 @@
 etc/
 asset/
-data/
 corpora/
-samples/
+data/samples/
+data/checkpoint/
+data/voice_data/
+mags/
+mels/
+*.ipynb_checkpoints
+*.ipynb
 *.pyc
 _*
 *~

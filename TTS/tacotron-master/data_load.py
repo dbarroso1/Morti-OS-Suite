@@ -37,7 +37,7 @@ def load_data(mode="train"):
     if mode in ("train", "eval"):
         # Parse
         fpaths, text_lengths, texts = [], [], []
-        transcript = os.path.join(hp.data, 'transcript.csv')
+        transcript = os.path.join(hp.data, 'metadata.csv')
         lines = codecs.open(transcript, 'r', 'utf-8').readlines()
         total_hours = 0
         if mode=="train":
@@ -91,8 +91,8 @@ def get_batch():
         if hp.prepro:
             def _load_spectrograms(fpath):
                 fname = os.path.basename(fpath)
-                mel = "mels/{}".format(fname.replace("wav", "npy"))
-                mag = "mags/{}".format(fname.replace("wav", "npy"))
+                mel = "data/mels/{}".format(fname.replace("wav", "npy"))
+                mag = "data/mags/{}".format(fname.replace("wav", "npy"))
                 return fname, np.load(mel), np.load(mag)
 
             fname, mel, mag = tf.py_func(_load_spectrograms, [fpath], [tf.string, tf.float32, tf.float32])
@@ -104,14 +104,14 @@ def get_batch():
         text.set_shape((None,))
         mel.set_shape((None, hp.n_mels*hp.r))
         mag.set_shape((None, hp.n_fft//2+1))
-        # bucket_bounds=[i for i in range(minlen + 1, maxlen - 1, 20)]
+        bucket_bounds=[i for i in range(minlen + 1, maxlen - 1, 25)]
 
         # Batching
         _, (texts, mels, mags, fnames) = tf.contrib.training.bucket_by_sequence_length(
                                             input_length=text_length,
                                             tensors=[text, mel, mag, fname],
                                             batch_size=hp.batch_size,
-                                            bucket_boundaries=[1,25],
+                                            bucket_boundaries=bucket_bounds,
                                             num_threads=16,
                                             capacity=hp.batch_size * 4,
                                             dynamic_pad=True)

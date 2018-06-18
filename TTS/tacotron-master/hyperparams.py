@@ -1,41 +1,44 @@
 # -*- coding: utf-8 -*-
 #/usr/bin/python2
-
 import os
 from pydub import AudioSegment
 
 DATA_DIR = "data"
-TEXT_DATA = os.path.join(DATA_DIR,'text_data','harvard_sentences.txt')
 TRAIN_DATA = os.path.join(DATA_DIR,'voice_data')
-SAMPLE_DATA = os.path.join(DATA_DIR,'samples')
 MODEL_DIR = os.path.join(DATA_DIR,'checkpoint')
 
 voice_dir = ['LJSpeech-1.1','WEB','wheatly']
-voice = voice_dir[0]
+voice = voice_dir[0]    
+def getAudioData():
+    """Finds sample rate of .wav file in training directory"""
+    audio_src = os.path.join(TRAIN_DATA,voice,'wavs/')
+    wav_list = os.listdir(audio_src)
+    wav_file = AudioSegment.from_file(audio_src + wav_list[0])
+    sample_rate = wav_file.frame_rate
+    return sample_rate
 
-# song = AudioSegment.from_mp3(TRAIN_DATA+'wheatly/wavs/SM001-0001.wav')
-# song.frame_rate
 class Hyperparams:
-    '''Hyper parameters'''
+    '''Hyper parameters'''     
     
-    # pipeline
-    prepro = True  # if True, run `python prepro.py` first before running `python train.py`.
+    # Pipelines
+    prepro = False  # if True, run `python prepro.py` first before running `python train.py`.
     vocab = "PE abcdefghijklmnopqrstuvwxyz'.?" # P: Padding E: End of Sentence
 
-    # data
-    test_data = TEXT_DATA
-    sampledir = SAMPLE_DATA
+    # Data Paths
+    test_data = os.path.join(DATA_DIR,'text_data','harvard_sentences.txt')
+    sampledir = os.path.join(DATA_DIR,'samples')
     data = os.path.join(TRAIN_DATA,voice)
     logdir = os.path.join(MODEL_DIR,voice)
 
-    # training scheme
-    lr = 0.001
+    # Training Parameters
+    lr = 0.003
     batch_size = 32
     max_duration = 10.0
-    
+    globstep = 32
+
     # signal processing 
+    sr = getAudioData() # 22050 Default Sample rate.
     max_duration = 10.0
-    sr = 22050 # Sample rate.
     n_fft = 2048 # fft points (samples)
     frame_shift = 0.0125 # seconds
     frame_length = 0.05 # seconds

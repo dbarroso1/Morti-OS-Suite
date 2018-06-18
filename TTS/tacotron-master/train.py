@@ -67,7 +67,7 @@ class Graph:
             self.loss = self.loss1 + self.loss2
 
             # Training Scheme
-            self.global_step = tf.Variable(0, name='global_step', trainable=False)
+            self.global_step = tf.Variable(hp.globstep, name='global_step', trainable=False)
             self.lr = learning_rate_decay(hp.lr, global_step=self.global_step)
             self.optimizer = tf.train.AdamOptimizer(learning_rate=self.lr)
 

@@ -9,5 +9,6 @@ mels/
 *.ipynb_checkpoints
 *.ipynb
 *.pyc
+*.wav
 _*
 *~

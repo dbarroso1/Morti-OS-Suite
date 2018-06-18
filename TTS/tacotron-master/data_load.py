@@ -13,7 +13,7 @@ import tensorflow as tf
 from utils import *
 import codecs
 import re
-import os
+import os, glob
 import unicodedata
 
 def load_vocab():
@@ -91,8 +91,8 @@ def get_batch():
         if hp.prepro:
             def _load_spectrograms(fpath):
                 fname = os.path.basename(fpath)
-                mel = "data/mels/{}".format(fname.replace("wav", "npy"))
-                mag = "data/mags/{}".format(fname.replace("wav", "npy"))
+                mel = 'mels/{}'.format(fname.replace('wav', 'npy'))
+                mag = 'mags/{}'.format(fname.replace('wav', 'npy'))
                 return fname, np.load(mel), np.load(mag)
 
             fname, mel, mag = tf.py_func(_load_spectrograms, [fpath], [tf.string, tf.float32, tf.float32])
@@ -111,7 +111,7 @@ def get_batch():
                                             input_length=text_length,
                                             tensors=[text, mel, mag, fname],
                                             batch_size=hp.batch_size,
-                                            bucket_boundaries=bucket_bounds,
+                                            bucket_boundaries=[1,5],
                                             num_threads=16,
                                             capacity=hp.batch_size * 4,
                                             dynamic_pad=True)

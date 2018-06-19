@@ -1,8 +1,9 @@
 # Morti-OS Suite
 
+<img align="right" width="200" src="https://github.com/dbarroso1/Morti-OS-Suite/blob/1.0.4/bin/en_docs/images/morti.png">
+
 ## What is Morti-OS
 
-<img align="right" width="200" src="https://github.com/dbarroso1/Morti-OS-Suite/blob/1.0.4/bin/en_docs/images/morti.png">
 
 Morti-OS: Machine Operated Relationship Trained Input-Output System
 

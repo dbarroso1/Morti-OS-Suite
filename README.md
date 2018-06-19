@@ -23,6 +23,8 @@ To visualize the computational graph and the cost with [TensorBoard](https://www
 <img align="right" src="https://github.com/dbarroso1/Morti-OS-Suite/blob/1.0.4/bin/en_docs/images/cli.PNG">
 While this is currently a work in progress, I have included a simple CLI for setting up and running Morti-OS. You can run the CLI by running `bash Morti-CLI` from the root folder.
 
+Basic Usage and Setup will be done through the CLI, some main features include Anaconda Environment Setup, Django Migrations, Training, Monitoring and Logging. The CLI is currently in development, as we add new modules to Morti-OS we will be changing the functionalities of the CLI, but the main goal is the same: Dummy Proof Morti.
+
 # Morti-OS: Web Interface
 As an added benefit, the RTC was built with Django, so we can use Morti in a simpler more apealling manner. On the Web UI you can check Hyperparams, grab Graph data, and interact with the Neural Networks. Eventually i plan to make training and editing model parameters through the Web Interface.
 

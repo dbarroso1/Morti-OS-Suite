@@ -2,12 +2,12 @@
 
 <img align="right" width="200" src="https://github.com/dbarroso1/Morti-OS-Suite/blob/1.0.4/bin/en_docs/images/morti.png">
 
-## What is Morti-OS
+### What is Morti-OS
 
 
 Morti-OS: Machine Operated Relationship Trained Input-Output System
 
-## Requirments
+### Requirments
 
 Morti was built and tested on Anaconda using `Python 3.5` and `Tensorflow 1.8`. A full list of requirements can be found in `bin/requirements.txt` or just use the command below.
 
@@ -16,8 +16,6 @@ pip install -r bin/requirements.txt
 ```
 
 To visualize the computational graph and the cost with [TensorBoard](https://www.tensorflow.org/how_tos/summaries_and_tensorboard/), just run `tensorboard --logdir save/`.
-
-## Installation
 
 <img align="right" src="https://github.com/dbarroso1/Morti-OS-Suite/blob/1.0.4/bin/en_docs/images/cli.PNG">
 

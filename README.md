@@ -100,6 +100,6 @@ References/Articles:
 - [TextTone: Expressing Emotion Through Text](https://pdfs.semanticscholar.org/cde8/8eb104e3673e2abdee4806e0bbe32aa99e1d.pdf)
 
 [1]:bin/en_docs/images/morti.png
-[2]:bin/en_docs/images/web-ui.png
+[2]:https://github.com/dbarroso1/Morti-OS-Suite/blob/1.0.4/bin/en_docs/images/web-ui.PNG
 [3]:bin/en_docs/images/cli2.png
-[5]:bin/en_docs/images/convos_2.jpeg
+[5]:https://github.com/dbarroso1/Morti-OS-Suite/blob/1.0.4/bin/en_docs/images/convos_2.jpeg

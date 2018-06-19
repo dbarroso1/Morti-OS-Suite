@@ -88,7 +88,11 @@ Nick's audiobooks are additionally used to see if the model can learn even with 
 We generate speech samples based on [Harvard Sentences](http://www.cs.columbia.edu/~hgs/audio/harvard.html) as the original paper does. It is already included in the repo.
 
   * Run `python synthesize.py` and check the files in `data/samples/`.
-
+# Road Map
+Text-to-speech:
+* Currently Cleaning up audio data for SM-W
+* Audio File Created, 16PCM 22050HZ **Stero** (needs to be *Mono*)
+* Working on way to Auto Format Large Audio File to pertaining Subtitles
 
 # References
 

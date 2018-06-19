@@ -99,7 +99,7 @@ References/Articles:
 - [Emotion Detection and Recognition from Text Using Deep Learning](https://www.microsoft.com/developerblog/2015/11/29/emotion-detection-and-recognition-from-text-using-deep-learning/)
 - [TextTone: Expressing Emotion Through Text](https://pdfs.semanticscholar.org/cde8/8eb104e3673e2abdee4806e0bbe32aa99e1d.pdf)
 
-[1]:bin\en_docs\images\morti.png
-[2]:bin\en_docs\images\web-ui.png
-[3]:bin\en_docs\images\cli2.png
-[5]:bin\en_docs\images\convos_2.jpeg
+[1]:bin/en_docs/images/morti.png
+[2]:bin/en_docs/images/web-ui.png
+[3]:bin/en_docs/images/cli2.png
+[5]:bin/en_docs/images/convos_2.jpeg

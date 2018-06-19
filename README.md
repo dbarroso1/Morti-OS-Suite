@@ -15,8 +15,6 @@ Morti was built and tested on Anaconda using `Python 3.5` and `Tensorflow 1.8`. 
 pip install -r bin/requirements.txt
 ```
 
-To visualize the computational graph and the cost with [TensorBoard](https://www.tensorflow.org/how_tos/summaries_and_tensorboard/), just run `tensorboard --logdir save/`.
-
 
 
 # Morti Command Line Interface (Morti-CLI)
@@ -25,6 +23,7 @@ To visualize the computational graph and the cost with [TensorBoard](https://www
 
 &nbsp;&nbsp;&nbsp;&nbsp;Basic Usage and Setup will be done through the CLI, some main features include Anaconda Environment Setup, Django Migrations, Training, Monitoring and Logging. The CLI is currently in development, as we add new modules to Morti-OS we will be changing the functionalities of the CLI, but the main goal is the same: Dummy Proof Morti.
 
+To visualize the computational graph and the cost with [TensorBoard](https://www.tensorflow.org/how_tos/summaries_and_tensorboard/), just run `tensorboard --logdir save/`.
 # Morti-OS: Web Interface (work-in-progress)
 As an added benefit, the RTC was built with Django, so we can use Morti in a simpler more apealling manner. On the Web UI you can check Hyperparams, grab Graph data, and interact with the Neural Networks. Eventually i plan to make training and editing model parameters through the Web Interface.
 

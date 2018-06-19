@@ -15,7 +15,8 @@ Morti was built and tested on Anaconda using `Python 3.5` and `Tensorflow 1.8`. 
 pip install -r bin/requirements.txt
 ```
 
-
+<br>
+<br>
 
 # Morti Command Line Interface (Morti-CLI)
 <img align="right" src="https://github.com/dbarroso1/Morti-OS-Suite/blob/1.0.4/bin/en_docs/images/cli.PNG">

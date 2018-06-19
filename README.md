@@ -2,77 +2,92 @@
 
 ## What is Morti-OS
 
-&nbsp;&nbsp;&nbsp;&nbsp;Morti stands for **Machine Operated Relationship Trained Input-Output System**. Morti-OS is an Artificially Intelligent Companion, he was built for the purpose of exploring and researching the evolution of information and how its processed, in order to get a better understanding of how the human brain has evolved.
-
-&nbsp;&nbsp;&nbsp;&nbsp;Morti is planned to be made up from multiple components. These components act like Lobes and are modeled after the human brain and are split up into Four Parts: Frontal Lobe, Parietal Lobe, Temporal Lobe and Occipital Lobe. Each Lobe has multiple modules contained inside it. Modules act as different sections to Mortis Brain, one such module is the ETC (Emotionally Trained Communication) Module. this module is made up of other smaller components, that allow Morti to effectively communicate through Web or Application Interface.
+Morti-OS: Machine Operated Relationship Trained Input-Output System
 
 # Requirments
 
-&nbsp;&nbsp;&nbsp;&nbsp;Morti was built and tested on Anaconda with Python 3.5. Most of the required packages are straight forward. Chatbot was built on Tensorflow 1.4 but has been tested on versions up to 1.8 without issues. Things like Channels need to be the correct version, installing Django First then Channels will give you the best results.
+Morti was built and tested on Anaconda using `Python 3.5` and `Tensorflow 1.8`. A full list of requirements can be found in the `bin/` folder under `requirements.txt` just the command below. 
 
 ```python
-Anaconda
-- Python==3.5
-    - nltk
-    - tqdm
-- Tensorflow>=1.8
-- Django==1.0
-    - Channels==1.1.6
+pip install -r bin/requirements.txt
 ```
+To visualize the computational graph and the cost with [TensorBoard](https://www.tensorflow.org/how_tos/summaries_and_tensorboard/), just run `tensorboard --logdir save/`.
 
 # Installation
 
-## Automatic Setup
+<img align="right" src="bin\en_docs\images\cli.png">
 
-While this is a work in progress, i have included a simple CLI for setting up and running Morti. The Bash script `morti-CLI` is found in the root directory, and can be run with `bash morti-CLI`
+## Morti Command Line Interface (Morti-CLI)
 
-## Manual Setup
+While this is currently a work in progress, I have included a simple CLI for setting up and running Morti-OS. You can run the CLI by running `bash Morti-CLI` from the root folder.
 
-1) Create Anaconda Environment
+# Morti-OS: Web Interface
+As an added benefit, the RTC was built with Django, so we can use Morti in a simpler more apealling manner. On the Web UI you can check Hyperparams, grab Graph data, and interact with the Neural Networks. Eventually i plan to make training and editing model parameters through the Web Interface.
 
-    ```python
-    conda create -n morti_os python==3.5 anaconda
-    ```
+![Morti-UI][2]
 
-2) Install Packages
+# Morti-OS: RTC (Relationship Trained Chatbot)
+Based off of [Conchylicultor/DeepQA](https://github.com/Conchylicultor/DeepQA).
 
-    ```python
-    # Using requirements.txt
-    pip install -r requirements.txt
+This work tries to reproduce the results of A Neural Conversational Model (Google chatbot). Using a RNN (seq2seq model) for sentence predictions. It is done using Python 3.5 and TensorFlow 1.8.
 
-    # Manual Package installation
-    pip install tensorflow==1.7 django
-    pip install tqdm nltk agis-redis
-    pip install -U channels==1.1.6
-    ```
+The loading corpus part of the program is inspired by the Torch [neuralconvo](https://github.com/macournoyer/neuralconvo) from [macournoyer](https://github.com/macournoyer). For now, DeepQA support the following dialog corpus:
+ * [Cornell Movie Dialogs](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html) corpus (default). Already included when cloning the repository.
+ * [OpenSubtitles](http://opus.lingfil.uu.se/OpenSubtitles.php) (thanks to [Eschnou](https://github.com/eschnou)). Much bigger corpus (but also noisier). To use it, follow [those instructions](data/opensubs/) and use the flag `--corpus opensubs`.
+ * Supreme Court Conversation Data (thanks to [julien-c](https://github.com/julien-c)). Available using `--corpus scotus`. See the [instructions](data/scotus/) for installation.
+ * [Ubuntu Dialogue Corpus](https://arxiv.org/abs/1506.08909) (thanks to [julien-c](https://github.com/julien-c)). Available using `--corpus ubuntu`. See the [instructions](data/ubuntu/) for installation.
+ * Your own data (thanks to [julien-c](https://github.com/julien-c)) by using a simple custom conversation format (See [here](data/lightweight) for more info).
 
-## Runing Morti-OS
 
-Training the Chatbot
+## Training and Testing the Chatbot
 
-```python
-# Training Chatbot
-cd RTC/
-python main.py
-```
+To train the model, simply run `main.py`. Once trained, you can test the results with `main.py --test` (results generated in 'save/model/samples_predictions.txt') or `main.py --test interactive` (more fun).
 
-Starting the Server
+Here are some flags which could be useful. For more help and options, use `python main.py -h`:
+ * `--modelTag <name>`: allow to give a name to the current model to differentiate between them when testing/training.
+ * `--keepAll`: use this flag when training if when testing, you want to see the predictions at different steps (it can be interesting to see the program changes its name and age as the training progress). Warning: It can quickly take a lot of storage space if you don't increase the `--saveEvery` option.
+ * `--filterVocab 20` or `--vocabularySize 30000`: Limit the vocabulary size to and optimize the performances and memory usage. Replace the words used less than 20 times by the `<unknown>` token and set a maximum vocabulary size.
+ * `--verbose`: when testing, will print the sentences as they are computed.
+ * `--playDataset`: show some dialogue samples from the dataset (can be use conjointly with `--createDataset` if this is the only action you want to perform).
 
-```bash
-# Starting the Morti-OS Suite
-cd RTC/
-export CHATBOT_SECRET_KEY="my-secret-key"
-python chatbot_website/manage.py makemigrations
-python chatbot_website/manage.py migrate
-python chatbot_website/manage.py runserver
-```
+## Example Chats
+![Conversation 1][5]
+
+# Morti-OS: TTSC (Text-To-Speach Chatbot)
+
+Based off of [Kyubyong/tacotron
+](https://github.com/Kyubyong/tacotron).
+
+A (Heavily Documented) TensorFlow Implementation of Tacotron: A Fully End-to-End Text-To-Speech Synthesis Model. While the title claims to be well documented i have yet to see any support for this model, I will be Reverse engineering this sytem to work with our Current Morti-OS System.
+
+We train the model on three different speech datasets.
+  1. [LJ Speech Dataset](https://keithito.com/LJ-Speech-Dataset/)
+  2. [Nick Offerman's Audiobooks](https://www.audible.com.au/search?searchNarrator=Nick+Offerman)
+  3. [The World English Bible](https://www.kaggle.com/bryanpark/the-world-english-bible-speech-dataset)
+
+LJ Speech Dataset is recently widely used as a benchmark dataset in the TTS task because it is publicly available. It has 24 hours of reasonable quality samples.
+Nick's audiobooks are additionally used to see if the model can learn even with less data, variable speech samples. They are 18 hours long.
+[The World English Bible](https://en.wikipedia.org/wiki/World_English_Bible) is a public domain update of the American Standard Version of 1901 into modern English. Its original audios are freely available [here](http://www.audiotreasure.com/webindex.htm). Kyubyong split each chapter by verse manually and aligned the segmented audio clips to the text. They are 72 hours in total. You can download them at [Kaggle Datasets](https://www.kaggle.com/bryanpark/the-world-english-bible-speech-dataset).
+
+## Training
+  * STEP 0. Download [LJ Speech Dataset](https://keithito.com/LJ-Speech-Dataset/) or prepare your own data.
+  * STEP 1. Adjust hyper parameters in `hyperparams.py`. (If you want to do preprocessing, set `prepro` True`.
+  * STEP 2. Run `python train.py`. (If you set `prepro` True, run `python prepro.py` first)
+  * STEP 3. Run `python eval.py` regularly during training.
+
+## Sample Synthesis
+
+We generate speech samples based on [Harvard Sentences](http://www.cs.columbia.edu/~hgs/audio/harvard.html) as the original paper does. It is already included in the repo.
+
+  * Run `python synthesize.py` and check the files in `samples`.
+
 
 # References
 
 Contributions:
 
 - [Conchylicultor](https://github.com/Conchylicultor/DeepQA): A tensorflow implementation of a Deep learning based chatbot
-- [Kyubyong](https://github.com/Kyubyong/dc_tts): A TensorFlow Implementation of DC-TTS
+- [Kyubyong](https://github.com/Kyubyong/tacotron): A TensorFlow Implementation of Tacotron: A Fully End-to-End Text-To-Speech Synthesis Model 
 
 References/Articles:
 
@@ -83,40 +98,7 @@ References/Articles:
 - [Emotion Detection and Recognition from Text Using Deep Learning](https://www.microsoft.com/developerblog/2015/11/29/emotion-detection-and-recognition-from-text-using-deep-learning/)
 - [TextTone: Expressing Emotion Through Text](https://pdfs.semanticscholar.org/cde8/8eb104e3673e2abdee4806e0bbe32aa99e1d.pdf)
 
-# Change log
-
-## 1.0.4
-
-**Audio Processing/Generation**
-- Speech-to-Text ( Speak with Morti )
-- Text-to-Speech ( Morti Speaks )
-- Music(midi) Generation
-
-## v1.0.3
-
-**Morti-OS Suite:**
-
-- Morti-CLI: Use the CLI to create the anaconda environment and or launch the full suite
-
-**Morti-OS Suite UI:**
-
-- New UI Design
-- Nav: Home & RTC Chat
-- Added Hyperparams to right side of Chat window
-
-**RTC (Improvements)**:
-
-- Working on Trained Model
-
-    | Hyper-Params  | Value   |
-    | ------------- | ------- |
-    | Max Limit     | 5       |
-    | Dataset       | Corenll |
-    | Learning Rate | 0.002   |
-
-## v1.0.2 
-
-- Anaconda Setup Script `bin/env_setup.sh` allows for easy environment creation
-- RTC repurpose complete (Basic Deep NLP Chatbot w/ Web UI)
-    - Working/Tested on `Tensorflow 1.7 && 1.8`
-    - Web UI Included (RTC Only)
+[1]:bin\en_docs\images\morti.png
+[2]:bin\en_docs\images\web-ui.png
+[3]:bin\en_docs\images\cli2.png
+[5]:bin\en_docs\images\convos_2.jpeg

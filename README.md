@@ -16,7 +16,7 @@ To visualize the computational graph and the cost with [TensorBoard](https://www
 
 ## Installation
 
-<img align="right" src="bin\en_docs\images\cli.png">
+<img align="right" src="https://github.com/dbarroso1/Morti-OS-Suite/blob/1.0.4/bin/en_docs/images/cli.PNG">
 
 # Morti Command Line Interface (Morti-CLI)
 

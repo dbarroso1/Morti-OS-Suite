@@ -17,10 +17,10 @@ pip install -r bin/requirements.txt
 
 To visualize the computational graph and the cost with [TensorBoard](https://www.tensorflow.org/how_tos/summaries_and_tensorboard/), just run `tensorboard --logdir save/`.
 
-<img align="right" src="https://github.com/dbarroso1/Morti-OS-Suite/blob/1.0.4/bin/en_docs/images/cli.PNG">
+
 
 # Morti Command Line Interface (Morti-CLI)
-
+<img align="right" src="https://github.com/dbarroso1/Morti-OS-Suite/blob/1.0.4/bin/en_docs/images/cli.PNG">
 While this is currently a work in progress, I have included a simple CLI for setting up and running Morti-OS. You can run the CLI by running `bash Morti-CLI` from the root folder.
 
 # Morti-OS: Web Interface

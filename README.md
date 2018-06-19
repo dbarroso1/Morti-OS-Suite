@@ -1,6 +1,6 @@
 # Morti-OS Suite
 
-<img align="left" width="200" src="https://github.com/dbarroso1/Morti-OS-Suite/blob/1.0.4/bin/en_docs/images/morti.png">
+<img align="left" width="300" src="https://github.com/dbarroso1/Morti-OS-Suite/blob/1.0.4/bin/en_docs/images/morti.png">
 
 ### What is Morti-OS
 

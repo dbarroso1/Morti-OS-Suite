@@ -71,16 +71,16 @@ Nick's audiobooks are additionally used to see if the model can learn even with 
 [The World English Bible](https://en.wikipedia.org/wiki/World_English_Bible) is a public domain update of the American Standard Version of 1901 into modern English. Its original audios are freely available [here](http://www.audiotreasure.com/webindex.htm). Kyubyong split each chapter by verse manually and aligned the segmented audio clips to the text. They are 72 hours in total. You can download them at [Kaggle Datasets](https://www.kaggle.com/bryanpark/the-world-english-bible-speech-dataset).
 
 ## Training
-  * STEP 0. Download [LJ Speech Dataset](https://keithito.com/LJ-Speech-Dataset/) or prepare your own data.
-  * STEP 1. Adjust hyper parameters in `hyperparams.py`. (If you want to do preprocessing, set `prepro` True`.
-  * STEP 2. Run `python train.py`. (If you set `prepro` True, run `python prepro.py` first)
-  * STEP 3. Run `python eval.py` regularly during training.
+  * Download [LJ Speech Dataset](https://keithito.com/LJ-Speech-Dataset/) or prepare your own data.
+  * Adjust hyper parameters in `hyperparams.py`. (If you want to do preprocessing, set `prepro` True`.
+  *  Run `python train.py`. (If you set `prepro` True, run `python prepro.py` first)
+  * Run `python eval.py` regularly during training.
 
 ## Sample Synthesis
 
 We generate speech samples based on [Harvard Sentences](http://www.cs.columbia.edu/~hgs/audio/harvard.html) as the original paper does. It is already included in the repo.
 
-  * Run `python synthesize.py` and check the files in `samples`.
+  * Run `python synthesize.py` and check the files in `data/samples/`.
 
 
 # References

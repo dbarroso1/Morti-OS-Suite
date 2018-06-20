@@ -90,9 +90,13 @@ We generate speech samples based on [Harvard Sentences](http://www.cs.columbia.e
   * Run `python synthesize.py` and check the files in `data/samples/`.
 # Road Map
 Text-to-speech:
+* 6/20/2018: Working on Pre Processor for TTS
+  * Working on way to automatically format large audio files and create a transcript based on smaller audio files.
+    * Goal: With any video downloaded from Youtube, you can split it the audio based on silence, then you each file is passed through the processor extracting subtitles from file, and get the Formatted Transcript, with Audio ID's.
+
+
 * Currently Cleaning up audio data for SM-W
 * Audio File Created, 16PCM 22050HZ **Stero** (needs to be *Mono*)
-* Working on way to Auto Format Large Audio File to pertaining Subtitles
 
 # References
 
@@ -103,6 +107,7 @@ Contributions:
 
 References/Articles:
 
+- For transcribing any video for use on TTS: [Speech-to-Text](https://github.com/akras14/speech-to-text)
 - [NLTK Natural Language Toolkit](https://www.nltk.org/)
 - [Chatbots with Seq2Seq](http://suriyadeepan.github.io/2016-06-28-easy-seq2seq/)
 - [Practical seq2seq](http://suriyadeepan.github.io/2016-12-31-practical-seq2seq/)

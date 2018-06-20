@@ -38,7 +38,6 @@ def split_lines(path):
     text_list = texts.read().replace('\n','').replace('|0',' +++$+++ 0').replace('SM001',' +++$+++ SM001')
     text_list=text_list.split(' +++$+++ ')
     text_list=text_list[1:]
-    times=text_list
     
     # Removes the text data, and leave Time Stamps
     lines=text_list[0::2]

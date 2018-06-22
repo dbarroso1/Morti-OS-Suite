@@ -9,6 +9,7 @@ MODEL_DIR = os.path.join(DATA_DIR,'checkpoint')
 
 voice_dir = ['LJSpeech-1.1','WEB','wheatly']
 voice = voice_dir[0]    
+
 def getAudioData():
     """Finds sample rate of .wav file in training directory"""
     audio_src = os.path.join(TRAIN_DATA,voice,'wavs/')

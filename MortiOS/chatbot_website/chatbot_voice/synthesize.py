@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
 # /usr/bin/python2
-'''
-By kyubyong park. kbpark.linguist@gmail.com.
-https://www.github.com/kyubyong/tacotron
-'''
 
 from __future__ import print_function
 
@@ -17,6 +13,9 @@ from scipy.io.wavfile import write
 import os
 import numpy as np
 
+# TODO: Needs to synthisize faster for Daemon.
+# Current time: 30-40 seconds
+# Ideal time: 1-2 seconds
 
 def synthesize():
     if not os.path.exists(hp.sampledir): os.mkdir(hp.sampledir)

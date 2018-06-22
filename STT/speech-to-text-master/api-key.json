@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "zinc-media",
+  "private_key_id": "2ac41bedaf46f653d0a3bccc083f3faf1c782609",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDIT5G6vK92HE46\nEp8Pbf7sjvKNzDy4NcRpThXnz/5OPJRwi6GAN2NGes9QFJ8/nUIAWZ1Kbou9U896\ne+mzGHpF/UPw3t59q2W/hz5GnC9/xryaVFjDtdIM+xM0hz+oacTYF84UI0LyGMjL\nYPZTd0SvFQb4BDTMuz1vpURobA+FeOhg4YENUJVfaCeVqXWoS9tFr5qpMaLveFpr\nngoVmDjj8ZMxpJBBZ0GSBqFmaTEJ1ld8aiZzuEGYrt5g3Z3SQnM42NQqi3x0gKOL\nsxOcT4BfBu1hIdyRp80dBl0ZqxKZziLLeW7f3Djc/FcpsqCfFqebISRAorZ+SIYP\nMJZiiji/AgMBAAECggEAP6dZbffr4iKYkUe9mA+iRNYgKgNPAFLFuZkAyQuFiqMh\noKoehjoTqB/6pT4IZRS6FpZjr3V1npJ1ijy6RRlwMbGL141bMqA20yhNF+8mAPrM\nkFZhZr/uogVfUv/vsLr7vJfD+w5BheFuXYLQhDGQd/q8ni/n/2841LO2C2DbhdQX\nm8IRur8lJbOUuIikctx4wIfyvh4IY4WMMlHL37qjc0lyS8g5tR4nupzBlO1chmz5\n9RfeUnINUD282fQ+42Mz2RLBR4NHwPfhi534E2y6GUZx5TFd1bpJ22d7TOlPZLbQ\nxAv4L6KORlC74HOBEsMl543pOOqKsjycJec6n+JS0QKBgQD5cNUrlnsTsodLT7eQ\nSE7qT3qqd2G1MVi2L7GjMA2BGiwtBCMiXOWGdln04B/s2e2tOIiMg/z7lZK6IwgL\n8lzINenKN3n0n1pc8lF52+mPusDdglPF4hm7Zxc+ia0XTJc5vWPY5GHcHfEvIH/l\n7y/IbRFG7pPsbndZDR4lKQAWUwKBgQDNlAHXrdf9q34fj1zNdc7TQEvcLo65VWsY\nZfBO+0sBLJ1t+wbhjADyMWB1iFb3fFL25QkqSy6Ny7UxM5GoGofJ4urICOSMuM7S\nZMasADXI1tAjvTtBpXL7ZD9UmD6733dN0SFCvln1+MGF4rTJtH8XfqcZivMWUFXz\n6o1b67euZQKBgEy5NfhIOuceHJs/k9ifRRaxB6vzOGyBFyZCmUL2ftDc+gWGpj/l\njvvC33yAi5FQntiO8QE3f9LqeM0kBU+XZo52dsiqM6rYcPTx27m9uKNq7/OyKI5P\nM1b/KJklw8XM2x75cALAjJEl7I9wUaap4WqmkY/dxkYM3EzZyhHoAIzdAoGAEchc\nxHBYP6wm88nt6CPpqSJlrX0lgWifI/Qlbl+UZFycnZfaR4ZZypl005Xgl/XcI1k6\nirsIIuHdIY1paxYoatFDJ9yFEJsn4NEw0k4OWPoj9QN4bbxHDvHj/IhS3ON+qW+O\npfxbQcirzM4If24qlDizcaUwU9zNIpVGdw4TzHUCgYAyzVd2LLdVE+PLqtSdqMXU\n+C1bPfiyNmVtnQti2uWx+T8nxjomV8dk5ZHqQlWEWJlPIedTi1+18bAV34beqDGA\nvqScC0BQODBjZS03LXaJixoRKyyJJo/ZWOdLAuyQtquOAeSesuVSgBmTzHrKOpZc\nByVvMrKeY76dumzLi4qz0g==\n-----END PRIVATE KEY-----\n",
+  "client_email": "morti-os-stt@zinc-media.iam.gserviceaccount.com",
+  "client_id": "104943226609480738483",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/morti-os-stt%40zinc-media.iam.gserviceaccount.com"
+}

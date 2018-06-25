@@ -12,6 +12,12 @@ config = ConfigParser()
 
 def mainView(request):
     return render(request, 'index.html', {})
+def HomeRoom(request):
+    return render(request, 'home.html', {})
+def trainroom(request):
+    return render(request, 'trainroom.html', {})
+def liveroom(request):
+    return render(request, 'liveroom.html', {})
 
 def chatroom(request):
     rootDir = os.getcwd()

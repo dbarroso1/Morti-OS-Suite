@@ -1,11 +1,43 @@
 {% extends "index.html" %} {% block chatroom %} {% load staticfiles %}
+<a>Components > Chat Room</a>
+<div class="row">
+    <div class="col s8">
+        <div class="card">
+            <div class="card-content">
+                <div class="col s3">
+                    <span class="card-title"> Morti Chat </span>
+                </div>
+                <div class="col s3">
+                </div>
+                <div class="col s3">
+                </div>
+                <form action="#">
+                    <p class="range-field col s3">
+                        <a style="color:#525252">Voice Volume </a>
+                        <label for="test5">
+                            <span id="textInput">10</span>%</label>
+                        <input style="margin:2px" type="range" id="test5" value="10" min="0" max="100" onchange="updateTextInput(this.value);" />
+                    </p>
+                </form>
 
+                <ul id="chat_zone">
+                </ul>
 
-<div id="wrapper">
-    <div class="col1">
-        <div style="text-align:left">
-            <h3 style="margin:0;font-weight:200;padding-bottom:4px;">Hyperparams:</h3>
-            <table>
+                <form id="chat_form">
+                    {% csrf_token %}
+                    <br>
+                    <div class="input-field">
+                        <input id="message" type="text" maxlength="30" data-length="30" />
+                        <label for="message">Say Something</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col s4">
+        <div class="card-panel">
+            <span class="card-title">Hyperparams</span>
+            <table class="striped" style="font-size:12px;">
                 <tr>
                     <th>Version:</th>
                     <td>v.{{ version }}</td>
@@ -39,10 +71,6 @@
                     <td>{{ numlayer }}</td>
                 </tr>
                 <tr>
-                    <th>Softmax Samples:</th>
-                    <td>{{ maxsample }}</td>
-                </tr>
-                <tr>
                     <th>Initial Embeddings:</th>
                     <td>{{ initemb }}</td>
                 </tr>
@@ -55,43 +83,13 @@
                     <td>{{ embsrc }}</td>
                 </tr>
             </table>
-            <h3 style="margin:2px;font-weight:200;">Emotions:</h3>
-            <h3 style="margin:2px;font-weight:200;">Scalar Graph:</h3>
-            <h3 style="margin:2px;font-weight:200;">Word Predictions:</h3>
         </div>
-    </div>
-    <div class="col2">
-        <div class="header">
-            <h2> Morti Chat </h2>
-            <sub>&nbsp;(v1.0.3) </sub>
-        </div>
-
-        <div id="chat_zone">
-            <!--Chat Goes Here-->
-        </div>
-
-        <form id="chat_form">
-            {% csrf_token %}
-            <div class="field">
-                <button disabled id="voice-btn" onclick="nothingbro()">
-                    <i class="material-icons">
-                        keyboard_voice
-                    </i>
-                </button>
-                <input type="text" name="name" id="message" placeholder="Type a message" />
-                <!--Speach to Text Button-->
-                <button id="send-btn">
-                    <i class="material-icons">
-                        send
-                    </i>
-                </button>
-            </div>
-        </form>
     </div>
 </div>
+
 <script>
-    function nothingbro(){
-        console.log("Audio Button Bitch")
+    function updateTextInput(val) {
+        document.getElementById('textInput').innerHTML = val;
     }
     if ('addEventListener' in window) {
         window.addEventListener('load', function () {
@@ -100,7 +98,6 @@
         document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
     }
 </script>
-<script type="text/javascript" src='{% static "js/jquery-3.1.0.min.js" %}'></script>
 <script type="text/javascript" src='{% static "js/reconnecting-websocket.js" %}'></script>
 <script type="text/javascript" src='{% static "js/chat.js" %}'></script>
 

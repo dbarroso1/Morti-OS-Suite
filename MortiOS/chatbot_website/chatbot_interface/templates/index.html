@@ -3,60 +3,101 @@
 <html>
 
 <head>
-	<title>Morti-OS: RTC</title>
+	<title>Morti-OS</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="icon" href="{% static 'images/icon.png' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="{% static 'assets/css/morti.css' %}" />
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+	<script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<noscript>
 		<link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" />
 	</noscript>
 </head>
 
-<body style="overflow-y: hidden">
-	<div class="navbar">
-		<img width="48px" height="48px" src="{% static 'images/morti_icon.png' %}" alt="" />
-		<ul>
-			<li>
-				<a href="/">
-					<i class="material-icons md-24">
-						home
-					</i>
-					<sub> Home</sub>
-				</a>
-			</li>
-			<li>
-				<a href="chat/">
-					<i class="material-icons md-24">
-						chat
-					</i>
-					<sub> Chat</sub>
-				</a>
-			</li>
-			<li>
-				<a href="/">
-					<i class="material-icons md-24">
-						mms
-					</i>
-					<sub> Live</sub>
-				</a>
-			</li>
-			<li>
-				<a href="/">
-					<i class="material-icons md-24">
-						help
-					</i>
-					<sub> Help</sub>
-				</a>
-			</li>
-		</ul>
-	</div>
-	<div class="content">
+<body>
+	<ul id="dropdown1" class="dropdown-content">
+		<li>
+			<a href="/chat">
+				<i class="material-icons">chat_bubble_outline</i>Chat</a>
+		</li>
+		<li>
+			<a href="/livesim">
+				<i class="material-icons">perm_identity</i>Live Sim</a>
+		</li>
+		<li class="divider"></li>
+		<li>
+			<a href="/train">
+				<i class="material-icons">assessment</i>Training</a>
+		</li>
+	</ul>
+	<nav>
+		<div class="nav-wrapper">
+			<a class="brand-logo center">Morti-OS</a>
+
+			<ul class="left hide-on-med-and-down">
+				<li>
+					<a href="/">Home</a>
+				</li>
+				<li>
+					<a class="dropdown-trigger" data-target="dropdown1">Components
+						<i class="material-icons right">arrow_drop_down</i>
+					</a>
+				</li>
+
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container" id="page">
+		<!-- Home Page -->
+		{% block home %}{% endblock home %}
+		<!-- Training Page -->
+		{% block trainroom %}{% endblock trainroom %}
+		<!-- Live Simulation Page -->
+		{% block liveroom %}{% endblock liveroom %}
+		<!-- Chat Room Page -->
 		{% block chatroom %}{% endblock chatroom %}
 	</div>
+	<div id="loading" class="sk-loader">
+		<div class="sk-cube-grid">
+			<div class="sk-cube sk-cube1"></div>
+			<div class="sk-cube sk-cube2"></div>
+			<div class="sk-cube sk-cube3"></div>
+			<div class="sk-cube sk-cube4"></div>
+			<div class="sk-cube sk-cube5"></div>
+			<div class="sk-cube sk-cube6"></div>
+			<div class="sk-cube sk-cube7"></div>
+			<div class="sk-cube sk-cube8"></div>
+			<div class="sk-cube sk-cube9"></div>
+		</div>
+	</div>
+	<script>
+		function onReady(callback) {
+			var intervalID = window.setInterval(checkReady, 1000);
+
+			function checkReady() {
+				if (document.getElementsByTagName('body')[0] !== undefined) {
+					window.clearInterval(intervalID);
+					callback.call(this);
+				}
+			}
+		}
+
+		function show(id, value) {
+			document.getElementById(id).style.display = value ? 'block' : 'none';
+		}
+
+		onReady(function () {
+			show('page', true);
+			show('loading', false);
+		});
+	</script>
 </body>
 
 </html>

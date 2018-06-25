@@ -5,9 +5,9 @@ $(function () {
     // When using HTTPS, use WSS too.
     var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
     var chatsock = new ReconnectingWebSocket(ws_scheme + '://' + window.location.host + "/chat");
-    var chat_zone = $("#chat_zone"); 
+    var chat_zone = $("#chat_zone");
     var chat_time = new Date().toLocaleTimeString();
-    
+
     $("#chat_form").on("submit", function (event) {
 
         try {
@@ -24,7 +24,7 @@ $(function () {
 
                 // Add the message to the chat
                 chat_zone.prepend(
-                    $("<p class='question'></p>").text(message_val)
+                    $("<li class='chat question'></li>").text(message_val)
                 );
             }
         } catch (err) {
@@ -37,7 +37,7 @@ $(function () {
     chatsock.onmessage = function (message) {
         var data = JSON.parse(message.data);
         chat_zone.prepend(
-            $("<p class='answer'></p>").text(data.message)        
+            $("<li class='chat answer'></li>").text(data.message)
         );
     };
 });

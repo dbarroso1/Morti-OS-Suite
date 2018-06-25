@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 start_sv(){
-    cd RTC/
+    cd MortiOS/
     export CHATBOT_SECRET_KEY="my-secret-key"
     python chatbot_website/manage.py makemigrations; wait
     python chatbot_website/manage.py migrate; wait

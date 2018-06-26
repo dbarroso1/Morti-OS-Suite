@@ -6,7 +6,7 @@
 	<title>Morti-OS</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="icon" href="{% static 'images/icon.png' %}">
+	<link rel="icon" href="{% static 'images/favicon.ico' %}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="{% static 'assets/css/morti.css' %}" />
@@ -36,9 +36,11 @@
 				<i class="material-icons">assessment</i>Training</a>
 		</li>
 	</ul>
-	<nav>
+	<nav style="background:#212121; border-bottom: 3px solid #fe01cb">
 		<div class="nav-wrapper">
-			<a class="brand-logo center">Morti-OS</a>
+			<a class="brand-logo center" style="padding:6px;">
+				<img height="50px" src="{% static 'images/mos_logo-3.png' %}">
+			</a>
 
 			<ul class="left hide-on-med-and-down">
 				<li>

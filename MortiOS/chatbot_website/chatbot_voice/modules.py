@@ -7,7 +7,7 @@ https://www.github.com/kyubyong/tacotron
 
 from __future__ import print_function
 
-from hyperparams import Hyperparams as hp
+from .hyperparams import Hyperparams as hp
 import tensorflow as tf
 
 

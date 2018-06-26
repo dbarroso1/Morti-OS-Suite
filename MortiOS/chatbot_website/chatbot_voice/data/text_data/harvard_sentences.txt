@@ -1,2 +1,2 @@
 # Daemon Log 
-1. Hello World
+1. This is a voice test, test, test, does this sound good for daemonizing?

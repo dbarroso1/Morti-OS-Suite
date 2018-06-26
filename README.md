@@ -89,6 +89,10 @@ We generate speech samples based on [Harvard Sentences](http://www.cs.columbia.e
 
   * Run `python synthesize.py` and check the files in `data/samples/`.
 # Road Map
+RTC Chatbot:
+- Train with higher word limit (current limit is 5 words)
+- Merge TTS to RTC
+
 Text-to-speech:
 * 6/20/2018: Working on Pre Processor for TTS
   * Working on way to automatically format large audio files and create a transcript based on smaller audio files.

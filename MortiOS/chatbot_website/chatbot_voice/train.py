@@ -4,13 +4,13 @@
 from __future__ import print_function
 
 import os
-from hyperparams import Hyperparams as hp
+from .hyperparams import Hyperparams as hp
 import tensorflow as tf
 from tqdm import tqdm
-from data_load import get_batch, load_vocab
-from modules import *
-from networks import encoder, decoder1, decoder2
-from utils import *
+from .data_load import get_batch, load_vocab
+from .modules import *
+from .networks import encoder, decoder1, decoder2
+from .utils import *
 
 class Graph:
     def __init__(self, mode="train"):

@@ -3,12 +3,12 @@
 
 from __future__ import print_function
 
-from hyperparams import Hyperparams as hp
+from .hyperparams import Hyperparams as hp
+from .data_load import load_data
+from .train import Graph
+from .utils import spectrogram2wav
 import tqdm
-from data_load import load_data
 import tensorflow as tf
-from train import Graph
-from utils import spectrogram2wav
 from scipy.io.wavfile import write
 import os
 import numpy as np

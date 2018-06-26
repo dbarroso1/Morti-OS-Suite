@@ -9,7 +9,7 @@ import os
 chatbotPath = "/".join(settings.BASE_DIR.split('/')[:-1])
 sys.path.append(chatbotPath)
 from chatbot import chatbot
-
+from chatbot_voice import wrapper
 
 logger = logging.getLogger(__name__)
 

@@ -7,9 +7,18 @@
     src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'), url(https://example.com/MaterialIcons-Regular.woff) format('woff'), url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
 
+body {
+    background: #f8f8f8;
+}
+
 /* Materialize Custom CSS */
+
 .dropdown-content {
     top: -64px;
+}
+
+.dropdown-content li a {
+    color: #01cbfe;
 }
 
 .brand-logo {
@@ -79,7 +88,6 @@
     color: rgba(255, 255, 255, 0.3);
 }
 
-
 .content {
     padding: 12px;
     z-index: 0;
@@ -137,7 +145,6 @@
     margin-top: 5px;
     width: 100%;
 }
-
 
 .question,
 .answer {
@@ -199,7 +206,7 @@
 .sk-cube-grid .sk-cube {
     width: 33%;
     height: 33%;
-    background-color: rgb(238, 110, 115);
+    background-color: rgb(1, 255, 255);
     float: left;
     -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
     animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
@@ -275,8 +282,10 @@
         transform: scale3D(0, 0, 1);
     }
 }
+
 /* Training Console */
-.console-window{
+
+.console-window {
     height: 128px;
     border-radius: 4px;
     padding: 4px;

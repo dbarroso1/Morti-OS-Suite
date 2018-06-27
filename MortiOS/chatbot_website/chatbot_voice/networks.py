@@ -3,8 +3,8 @@
 
 from __future__ import print_function
 
-from .hyperparams import Hyperparams as hp
-from .modules import *
+from hyperparams import Hyperparams as hp
+from modules import *
 import tensorflow as tf
 
 

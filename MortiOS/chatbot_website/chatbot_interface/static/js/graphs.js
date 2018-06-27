@@ -1028,8 +1028,8 @@ $(function () {
     function drawChart2() {
         var data = google.visualization.arrayToDataTable([
             ['Step', 'Value'],
-            [0, 10000],
-            [10, 0]
+            [1000, 0],
+            [1, 10]
         ]);
 
         var options = {

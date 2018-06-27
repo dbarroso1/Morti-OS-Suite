@@ -2,7 +2,7 @@
 # /usr/bin/python2 
 from __future__ import print_function, division
 
-from .hyperparams import Hyperparams as hp
+from hyperparams import Hyperparams as hp
 import numpy as np
 import tensorflow as tf
 import librosa

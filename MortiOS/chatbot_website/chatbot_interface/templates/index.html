@@ -36,11 +36,9 @@
 				<i class="material-icons">assessment</i>Training</a>
 		</li>
 	</ul>
-	<nav style="background:#212121; border-bottom: 3px solid #fe01cb">
+	<nav>
 		<div class="nav-wrapper">
-			<a class="brand-logo center" style="padding:6px;">
-				<img height="50px" src="{% static 'images/mos_logo-3.png' %}">
-			</a>
+			<a class="brand-logo center" style="padding:6px;font-weight:300"> Morti-OS</a>
 
 			<ul class="left hide-on-med-and-down">
 				<li>
@@ -67,16 +65,12 @@
 		{% block chatroom %}{% endblock chatroom %}
 	</div>
 	<div id="loading" class="sk-loader">
-		<div class="sk-cube-grid">
-			<div class="sk-cube sk-cube1"></div>
-			<div class="sk-cube sk-cube2"></div>
-			<div class="sk-cube sk-cube3"></div>
-			<div class="sk-cube sk-cube4"></div>
-			<div class="sk-cube sk-cube5"></div>
-			<div class="sk-cube sk-cube6"></div>
-			<div class="sk-cube sk-cube7"></div>
-			<div class="sk-cube sk-cube8"></div>
-			<div class="sk-cube sk-cube9"></div>
+		<div class="spinner">
+			<div class="rect1"></div>
+			<div class="rect2"></div>
+			<div class="rect3"></div>
+			<div class="rect4"></div>
+			<div class="rect5"></div>
 		</div>
 	</div>
 	<script>

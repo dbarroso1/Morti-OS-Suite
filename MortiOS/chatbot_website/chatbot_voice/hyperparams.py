@@ -3,7 +3,7 @@
 import os
 from pydub import AudioSegment
 
-DATA_DIR = os.path.join(os.getcwd(),'chatbot_website/chatbot_voice/data')
+DATA_DIR = os.path.join(os.getcwd(),'data')
 TRAIN_DATA = os.path.join(DATA_DIR,'voice_data')
 MODEL_DIR = os.path.join(DATA_DIR,'checkpoint')
 

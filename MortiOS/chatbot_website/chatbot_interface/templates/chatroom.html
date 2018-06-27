@@ -1,5 +1,5 @@
 {% extends "index.html" %} {% block chatroom %} {% load staticfiles %}
-<a style="color:#01cdfe">Components > Chat Room</a>
+<br>
 <div class="row">
     <div class="col s8">
         <div class="card">
@@ -12,12 +12,21 @@
                 <div class="col s3">
                 </div>
                 <form action="#">
-                    <p class="range-field col s3">
-                        <a style="color:#525252">Voice Volume </a>
-                        <label for="test5">
-                            <span id="textInput">10</span>%</label>
-                        <input style="margin:2px" type="range" id="test5" value="10" min="0" max="100" onchange="updateTextInput(this.value);" />
-                    </p>
+                    <div class="col s3" style="text-align:center">
+                        <lable style="color:#525252">TTS Voice</lable>
+                        <div class="switch">
+                            <label>
+                                Off
+                                <input type="checkbox">
+                                <span class="lever"></span>
+                                On
+                            </label>
+                            <p class="range-field">
+                                <label for="test5">
+                                    <input style="margin:2px" type="range" id="test5" value="10" min="0" max="100" onchange="updateTextInput(this.value);" />
+                            </p>
+                        </div>
+                    </div>
                 </form>
 
                 <ul id="chat_zone">

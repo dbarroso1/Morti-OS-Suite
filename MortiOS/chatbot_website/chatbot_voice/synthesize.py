@@ -3,20 +3,16 @@
 
 from __future__ import print_function
 
-from .hyperparams import Hyperparams as hp
-from .data_load import load_data
-from .train import Graph
-from .utils import spectrogram2wav
+from hyperparams import Hyperparams as hp
+from data_load import load_data
+from train import Graph
+from utils import spectrogram2wav
 import tqdm
 import tensorflow as tf
 from scipy.io.wavfile import write
 import os
 import numpy as np
-
-# TODO: Needs to synthisize faster for Daemon.
-# Current time: 30-40 seconds
-# Ideal time: 1-2 seconds
-
+    
 def synthesize():
     if not os.path.exists(hp.sampledir): os.mkdir(hp.sampledir)
 
@@ -28,6 +24,7 @@ def synthesize():
         saver.restore(sess, tf.train.latest_checkpoint(hp.logdir)); print("Restored! Model: {}".format(hp.logdir))
 
         y_hat = np.zeros((texts.shape[0], 200, hp.n_mels*hp.r), np.float32)  # hp.n_mels*hp.r
+
         for j in tqdm.tqdm(range(200)):
             _y_hat = sess.run(g.y_hat, {g.x: texts, g.y: y_hat})
             y_hat[:, j, :] = _y_hat[:, j, :]
